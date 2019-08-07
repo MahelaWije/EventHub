@@ -35,4 +35,80 @@
     <string name="ex5">Event 5</string>
     <string name="title_activity_add_event2">AddEvent2</string>
 
+
+
+    <!--dumi-->
+    <!--<string name="app_name">OrderTickets</string>-->
+    <string name="text01">PICK YOUR PACKAGE</string>
+    <string name="text02">PLATINUM</string>
+    <string name="text03">GOLD</string>
+    <string name="text04">SILVER</string>
+    <string name="text05">BRONZE</string>
+    <string name="text06">LKR 3000</string>
+    <string name="text07">LKR 2000</string>
+    <string name="text08">LKR 1000</string>
+    <string name="text09">LKR 500</string>
+    <string name="text10">Cancle</string>
+    <string name="text11">PLATINUM</string>
+    <string name="text12">Grab Your Choice</string>
+    <string name="text13">(select only two items from each)</string>
+    <string name="text14">FOODS</string>
+    <string name="radio01">Drumsticks</string>
+    <string name="radio02">Sandwich</string>
+    <string name="radio03">Butter Cake</string>
+    <string name="radio04">Tea Bun</string>
+    <string name="text015">BEVERAGES</string>
+    <string name="radio05">Mojitho</string>
+    <string name="radio07">Cocktail</string>
+    <string name="radio06">Soft Drink</string>
+    <string name="radio08">Water Bottle</string>
+    <string name="text16">Next</string>
+    <string name="text17">GOLD</string>
+    <string name="radio09">Drumstick</string>
+    <string name="radio10">Sandwich</string>
+    <string name="radio11">Butter Cake</string>
+    <string name="radio12">Tea Bun</string>
+    <string name="radio13">Mojitho</string>
+    <string name="radio14">Cocktail</string>
+    <string name="radio15">Soft Drink</string>
+    <string name="radio16">Water Bottle</string>
+    <string name="text18">Next</string>
+    <string name="text19">(select only one item from each)</string>
+    <string name="text20">TICKETS</string>
+    <string name="text21">Quantity</string>
+    <string name="text22">Your Seat Position:</string>
+    <string name="text23">Front Rows</string>
+    <string name="text24">Book</string>
+    <string name="text25">Back Rows</string>
+    <string name="text26">Balcony</string>
+    <string name="text27">Your Booking Details</string>
+    <string name="text28">BnS Live In Concert</string>
+    <string name="text29">Aug 20,2019</string>
+    <string name="text30">6pm onwards</string>
+    <string name="text31">Eagles Banquet Hall</string>
+    <string name="text32">Package  =</string>
+    <string name="text33">Platinum</string>
+    <string name="text34">4</string>
+    <string name="text35">Seat Position  =</string>
+    <string name="text36">Front</string>
+    <string name="text37">Foods and Beverages</string>
+    <string name="text38">Sandwich</string>
+    <string name="text39">Tea Bun</string>
+    <string name="text40">Soft Drink</string>
+    <string name="text41">Water Bottle</string>
+    <string name="text42">You can update your package within 3 days(*conditions apply*)</string>
+    <string name="text43">Total Cost LKR  =</string>
+    <string name="text44">12000</string>
+    <string name="text45">Delete Booking</string>
+    <string name="text46">Pay</string>
+    <string name="text48">Ticket Quantity  =</string>
+    <string name="text47">Update</string>
+    <string name="text49">BarCode for Booking</string>
+    <string name="text50">Ref No :</string>
+    <string name="text51">001A2589BnS</string>
+    <string name="text52">Pay Online</string>
+    <string name="text53">You can pay on Event day or pay online now</string>
+    <string name="text54">Pay on Event day</string>
+    <string name="text55">BarCode</string>
+
 </resources>
