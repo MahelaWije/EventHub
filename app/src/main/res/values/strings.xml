@@ -111,4 +111,45 @@
     <string name="text54">Pay on Event day</string>
     <string name="text55">BarCode</string>
 
+    <string name="textView1">Search For.................</string>
+    <string name="button">Type</string>
+    <string name="button2">Location</string>
+    <string name="button3">Date and Time</string>
+    <string name="button5">Done</string>
+    <string name="textView5">Select the Type of Your Event</string>
+    <string name="textView">Select Your Date and Time</string>
+    <string name="button4">Done</string>
+    <string name="button12">Done</string>
+    <string name="button6">Music</string>
+    <string name="button8">Business</string>
+    <string name="button7">Sports</string>
+    <string name="button9">Fashion</string>
+    <string name="button10">Science</string>
+    <string name="button11">Festival</string>
+    <string name="button14">Type</string>
+    <string name="button15">Location</string>
+    <string name="button16">Date and Time</string>
+    <string name="button19">Add to Wishlist</string>
+    <string name="textView7">Event List</string>
+    <string name="textView8">Your Wishlist</string>
+    <string name="button18">Done</string>
+    <string name="button20">Delete</string>
+    <string name="textView6">Select Your Location</string>
+    <string name="button13">Done</string>
+    <string name="radioButton">Colombo</string>
+    <string name="radioButton2">Gampaha</string>
+    <string name="radioButton3">Galle</string>
+    <string name="radioButton4">Kandy</string>
+    <string name="editText2">Select a Type</string>
+    <string name="editText3">Select a Location</string>
+    <string name="editText4">Select a Date</string>
+    <string name="textView2">ex1</string>
+    <string name="textView3">ex2</string>
+    <string name="textView4">ex3</string>
+    <string name="textView9">ex4</string>
+    <string name="textView10">ex1</string>
+    <string name="textView11">ex2</string>
+    <string name="textView12">ex3</string>
+
+
 </resources>
