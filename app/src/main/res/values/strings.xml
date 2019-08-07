@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Event Hub</string>
+    <string name="txt1">Event Hub</string>
+    <string name="txt2">Enjoy Your Life !!</string>
+    <string name="txt3">Login</string>
+    <string name="txt4">Username : </string>
+    <string name="txt5">Password : </string>
+    <string name="txt6">Email : </string>
+    <string name="txt7">Register</string>
+    <string name="txt8">Customer Login</string>
+    <string name="txt9">Admin Login</string>
+    <string name="txt10">Event ID :</string>
+    <string name="txt11">Event Name :</string>
+    <string name="txt12">Category :</string>
+    <string name="txt13">Date :</string>
+    <string name="txt14">Time :</string>
+    <string name="txt15">Venue :</string>
+    <string name="txt16">Update Details</string>
+    <string name="txt17">Want to enjoy your life ?</string>
+    <string name="hint1">eg: E001</string>
+    <string name="hint2">Music, Sports etc</string>
+    <string name="hint3">eg: 08:00 - 17:00</string>
+    <string name="btn1">Connect with Us</string>
+    <string name="btn2">Add</string>
+    <string name="btn3">Select</string>
+    <string name="btn4">Add Events</string>
+    <string name="btn5">Event List</string>
+    <string name="btn6">Edit</string>
+    <string name="btn7">Update</string>
+    <string name="btn8">Logout</string>
+    <string name="ex1">Event 1</string>
+    <string name="ex2">Event 2</string>
+    <string name="ex3">Event 3</string>
+    <string name="ex4">Event 4</string>
+    <string name="ex5">Event 5</string>
+    <string name="title_activity_add_event2">AddEvent2</string>
+
+</resources>
