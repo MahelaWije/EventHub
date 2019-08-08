@@ -150,5 +150,37 @@
     <string name="textView11">ex2</string>
     <string name="textView12">ex3</string>
 
+    <string name="app_name">Payment</string>
+    <string name="txtpay">PAYMENT</string>
+    <string name="txt00001">Fill The Following Details for the Online Payment</string>
+    <string name="textcardtype">Card Type</string>
+    <string name="radiocard01">VISA</string>
+    <string name="radiocard02">MASTER</string>
+    <string name="textpayname">Name</string>
+    <string name="textcardnum">Card Number</string>
+    <string name="textpayexpire">Expire Date</string>
+    <string name="txtpaycvv">CVV</string>
+    <string name="textentername"></string>
+    <string name="butnpay">PAY</string>
+    <string name="txtsubmit">SUBMIT</string>
+    <string name="textupdate">Update Payment</string>
+    <string name="textup02">*update details here*</string>
+    <string name="txtsvaechangs">Save Changes</string>
+    <string name="textpayconfirm">Payment Confirmation</string>
+    <string name="textbnspay">BnS Live In Concert</string>
+    <string name="txtpaydate">Aug 20,2019</string>
+    <string name="txtpaytime">6pm onwards</string>
+    <string name="textpayplace">Eagles Banquet Hall</string>
+    <string name="textvisacode">Payment Method : </string>
+    <string name="txtcardnum">VISA  ************1049</string>
+    <string name="texttotalcost">Total Cost LKR  =</string>
+    <string name="textplaceorder">Place Order</string>
+    <string name="txtedittext">Edit Card Details</string>
+    <string name="textrefnum">Ref Num :</string>
+    <string name="txtref">0011A2589BnS</string>
+    <string name="txtsucsess">Payment Successfull</string>
+    <string name="txtdone">DONE</string>
+    <string name="txtpaylogout">LOG OUT</string>
+    <string name="textexit">EXIT</string>
 
 </resources>
