@@ -108,7 +108,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#87CEFA"
+        android:background="@drawable/round_btn"
         android:onClick="startSearchList"
         android:text="@string/button5"
         app:layout_constraintBottom_toBottomOf="parent"

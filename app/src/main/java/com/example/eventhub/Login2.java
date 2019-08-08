@@ -19,5 +19,10 @@ public class Login2 extends AppCompatActivity {
         startActivity(intent1);
     }
 
+    public void  startnextActivity2(View view) {
+        Intent intent1 = new Intent(Login2.this,Login4.class);
+        startActivity(intent1);
+    }
+
 
 }

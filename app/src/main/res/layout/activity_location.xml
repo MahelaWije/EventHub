@@ -118,7 +118,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#87cefa"
+        android:background="@drawable/round_btn"
         android:onClick="startWishMain"
         android:text="@string/button13"
         app:layout_constraintBottom_toBottomOf="parent"

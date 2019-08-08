@@ -36,7 +36,6 @@
     <string name="title_activity_add_event2">AddEvent2</string>
 
 
-
     <!--dumi-->
     <!--<string name="app_name">OrderTickets</string>-->
     <string name="text01">PICK YOUR PACKAGE</string>
@@ -132,7 +131,7 @@
     <string name="button19">Add to Wishlist</string>
     <string name="textView7">Event List</string>
     <string name="textView8">Your Wishlist</string>
-    <string name="button18">Done</string>
+    <string name="button18">Proceed</string>
     <string name="button20">Delete</string>
     <string name="textView6">Select Your Location</string>
     <string name="button13">Done</string>
