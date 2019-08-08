@@ -32,6 +32,10 @@
         <activity android:name=".gold"/>
         <activity android:name=".platinum"/>
         <activity android:name=".MainActivityOrderTickets"/>
+        <activity android:name=".Success"/>
+        <activity android:name=".purchase"/>
+        <activity android:name=".updateCard"/>
+        <activity android:name=".cardpayment"/>
         <activity android:name=".Login3" />
         <activity android:name=".Login2" />
         <activity android:name=".Login1" />
@@ -46,6 +50,7 @@
         <activity android:name=".purchase" />
         <activity android:name=".updateCard" />
         <activity android:name=".cardpayment"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

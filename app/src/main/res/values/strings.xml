@@ -102,15 +102,15 @@
     <string name="text46">Pay</string>
     <string name="text48">Ticket Quantity  =</string>
     <string name="text47">Update</string>
-    <string name="text49">BarCode for Booking</string>
+    <string name="text49">QRCode for Booking</string>
     <string name="text50">Ref No :</string>
     <string name="text51">001A2589BnS</string>
     <string name="text52">Pay Online</string>
     <string name="text53">You can pay on Event day or pay online now</string>
     <string name="text54">Pay on Event day</string>
-    <string name="text55">BarCode</string>
+    <string name="text55">QRCode</string>
 
-    <string name="textView1">Search For.................</string>
+    <string name="textView1">Search For.....</string>
     <string name="button">Type</string>
     <string name="button2">Location</string>
     <string name="button3">Date and Time</string>
@@ -150,7 +150,7 @@
     <string name="textView11">ex2</string>
     <string name="textView12">ex3</string>
 
-    <string name="app_name">Payment</string>
+
     <string name="txtpay">PAYMENT</string>
     <string name="txt00001">Fill The Following Details for the Online Payment</string>
     <string name="textcardtype">Card Type</string>
@@ -182,5 +182,6 @@
     <string name="txtdone">DONE</string>
     <string name="txtpaylogout">LOG OUT</string>
     <string name="textexit">EXIT</string>
+    <string name="textalready">Do You Already Have an Account...?</string>
 
 </resources>
