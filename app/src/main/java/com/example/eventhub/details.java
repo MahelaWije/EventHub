@@ -20,4 +20,10 @@ public class details extends AppCompatActivity {
         startActivity(intent10);
     }
 
+    public void deletebooking01(View view){
+
+        Intent intent11 = new Intent(details.this, TheWishlist.class);
+        startActivity(intent11);
+    }
+
 }

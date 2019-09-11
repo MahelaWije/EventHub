@@ -22,4 +22,9 @@ public class purchase extends AppCompatActivity {
         Intent intent0001 = new Intent(purchase.this, Success.class);
         startActivity(intent0001);
     }
+
+    public void succuss002(View view){
+        Intent intent0001 = new Intent(purchase.this, cardpayment.class);
+        startActivity(intent0001);
+    }
 }
