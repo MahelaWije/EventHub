@@ -187,5 +187,6 @@
     <string name="Evnt">Event</string>
     <string name="pkg">Package</string>
     <string name="cusid">Customer ID</string>
+    <string name="txtPid">Package ID :</string>
 
 </resources>
