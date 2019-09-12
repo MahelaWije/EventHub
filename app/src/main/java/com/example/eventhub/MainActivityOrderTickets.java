@@ -16,7 +16,7 @@ public class MainActivityOrderTickets extends AppCompatActivity {
 
      public void platinum01(View view){
 
-         Intent intent01 = new Intent(MainActivityOrderTickets.this, platinum.class);
+         Intent intent01 = new Intent(MainActivityOrderTickets.this, customer_form01.class);
          startActivity(intent01);
 
      }
