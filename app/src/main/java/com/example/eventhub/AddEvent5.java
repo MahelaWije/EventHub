@@ -79,10 +79,10 @@ public class AddEvent5 extends AppCompatActivity {
 
                             addEvent.setEventName(t2.getText().toString());
                             addEvent.setCategory(t3.getText().toString());
-                            addEvent.setCategory(t4.getText().toString());
+                            addEvent.setVenue(t4.getText().toString());
                             //ft.setExday(t5.getText().toString());
 
-                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("EventDetails").child(t2.getText().toString());
+                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("EventDetails").child(t1.getText().toString());
                             dbRef.setValue(addEvent);
 
                             Toast.makeText(getApplicationContext(),"Data Update Successfully!",Toast.LENGTH_SHORT).show();
