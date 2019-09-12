@@ -190,5 +190,6 @@
     <string name="txtPid">Package ID :</string>
     <string name="packageadd">Add</string>
     <string name="hintpack">eg : P001</string>
+    <string name="addpack">Add</string>
 
 </resources>
