@@ -100,7 +100,7 @@
     <string name="text44">12000</string>
     <string name="text45">Delete Booking</string>
     <string name="text46">Pay</string>
-    <string name="text48">Ticket Quantity  =</string>
+    <string name="text48">Ticket Quantity</string>
     <string name="text47">Update</string>
     <string name="text49">QRCode for Booking</string>
     <string name="text50">Ref No :</string>
@@ -183,5 +183,7 @@
     <string name="txtpaylogout">LOG OUT</string>
     <string name="textexit">EXIT</string>
     <string name="textalready">Do You Already Have an Account...?</string>
+    <string name="Evnt">Event</string>
+    <string name="pkg">Package</string>
 
 </resources>
