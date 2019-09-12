@@ -8,7 +8,7 @@
     tools:context=".cardpayment">
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/evenue"
         android:layout_width="205dp"
         android:layout_height="71dp"
         android:layout_marginStart="8dp"
@@ -231,7 +231,7 @@
         app:layout_constraintVertical_bias="0.812" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/ename"
         android:layout_width="205dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
@@ -264,7 +264,7 @@
         app:layout_constraintVertical_bias="0.931" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/ecategory"
         android:layout_width="205dp"
         android:layout_height="39dp"
         android:layout_marginStart="8dp"
