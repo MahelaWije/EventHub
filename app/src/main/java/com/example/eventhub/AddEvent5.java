@@ -66,24 +66,24 @@ public class AddEvent5 extends AppCompatActivity {
 
         //Update Method
 
-       /* btnUpdate.setOnClickListener(new View.OnClickListener() {
+       btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference updateRef = FirebaseDatabase.getInstance().getReference().child("payment");
+                DatabaseReference updateRef = FirebaseDatabase.getInstance().getReference().child("EventDetails");
                 updateRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        payment ft = new payment();
+                        AddEvent addEvent = new AddEvent();
 
                         if(dataSnapshot.hasChild(t1.getText().toString())){
 
-                            ft.setCno(t2.getText().toString());
-                            ft.setNam(t3.getText().toString());
-                            ft.setCvc(t4.getText().toString());
-                            ft.setExday(t5.getText().toString());
+                            addEvent.setEventName(t2.getText().toString());
+                            addEvent.setCategory(t3.getText().toString());
+                            addEvent.setCategory(t4.getText().toString());
+                            //ft.setExday(t5.getText().toString());
 
-                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("payment").child(t2.getText().toString());
-                            dbRef.setValue(ft);
+                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("EventDetails").child(t2.getText().toString());
+                            dbRef.setValue(addEvent);
 
                             Toast.makeText(getApplicationContext(),"Data Update Successfully!",Toast.LENGTH_SHORT).show();
                         }
@@ -103,12 +103,12 @@ public class AddEvent5 extends AppCompatActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("payment");
+                DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("EventDetails");
                 delRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.hasChild(t1.getText().toString())){
-                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("payment").child(t1.getText().toString());
+                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("EventDetails").child(t1.getText().toString());
                             dbRef.removeValue();
 
                             Toast.makeText(getApplicationContext(),"Data deleted succesfully!",Toast.LENGTH_SHORT).show();
@@ -124,7 +124,7 @@ public class AddEvent5 extends AppCompatActivity {
                     }
                 });
             }
-        });*/
+        });
     }
 
     public void  startnextActivity1(View view) {
