@@ -189,5 +189,6 @@
     <string name="cusid">Customer ID</string>
     <string name="txtPid">Package ID :</string>
     <string name="packageadd">Add</string>
+    <string name="hintpack">eg : P001</string>
 
 </resources>
