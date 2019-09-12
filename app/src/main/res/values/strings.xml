@@ -185,5 +185,6 @@
     <string name="textalready">Do You Already Have an Account...?</string>
     <string name="Evnt">Event</string>
     <string name="pkg">Package</string>
+    <string name="cusid">Customer ID</string>
 
 </resources>
