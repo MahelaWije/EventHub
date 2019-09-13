@@ -191,7 +191,5 @@
     <string name="packageadd">Add</string>
     <string name="hintpack">eg : P001</string>
     <string name="addpack">Add</string>
-    <string name="edit">Edit your Details</string>
-    <string name="pymnt">Pay Now</string>
 
 </resources>
