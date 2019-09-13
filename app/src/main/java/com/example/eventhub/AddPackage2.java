@@ -17,7 +17,7 @@ public class AddPackage2 extends AppCompatActivity {
 
 
     Button add1;
-    EditText pid, pname, ecategory, pticket, poffers;
+    EditText pid, pname, pcategory2, pticket, poffers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class AddPackage2 extends AppCompatActivity {
 
         pid = findViewById(R.id.pid);
         pname = findViewById(R.id.pname);
-        ecategory = findViewById(R.id.eecategory);
+        pcategory2 = findViewById(R.id.pcategory2);
         pticket = findViewById(R.id.pticket);
         poffers = findViewById(R.id.poffers);
 
@@ -49,7 +49,7 @@ public class AddPackage2 extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Please enter event ID", Toast.LENGTH_LONG).show();
                     else if (isEmpty((pname.getText().toString())))
                         Toast.makeText(getApplicationContext(), "Please enter event name", Toast.LENGTH_LONG).show();
-                    else if (isEmpty((ecategory.getText().toString())))
+                    else if (isEmpty((pcategory2.getText().toString())))
                         Toast.makeText(getApplicationContext(), "Please enter event category", Toast.LENGTH_LONG).show();
                     else if (isEmpty((pticket.getText().toString())))
                         Toast.makeText(getApplicationContext(), "Please enter event venue", Toast.LENGTH_LONG).show();
@@ -64,7 +64,7 @@ public class AddPackage2 extends AppCompatActivity {
 
                         addPack.setPackageID(pid.getText().toString().trim());
                         addPack.setPackageName(pname.getText().toString().trim());
-                        addPack.setCategory(ecategory.getText().toString().trim());
+                        addPack.setCategory(pcategory2.getText().toString().trim());
                         addPack.setTicketPrice(pticket.getText().toString().trim());
                         addPack.setOffers(poffers.getText().toString().trim());
                     /*addEvent2.setFullName(txtname.getText().toString().trim());
@@ -103,7 +103,7 @@ public class AddPackage2 extends AppCompatActivity {
             public void clearControls() {
                 pid.setText("");
                 pname.setText("");
-                ecategory.setText("");
+                pcategory2.setText("");
                 pticket.setText("");
                 poffers.setText("");
                     /*txtnic.setText("");

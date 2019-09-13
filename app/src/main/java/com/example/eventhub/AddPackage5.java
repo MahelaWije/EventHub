@@ -24,7 +24,7 @@ public class AddPackage5 extends AppCompatActivity {
 
         final EditText t1 = findViewById(R.id.pid);
         final EditText t2 = findViewById(R.id.pname);
-        final EditText t3 = findViewById(R.id.eecategory);
+        final EditText t3 = findViewById(R.id.pcategory);
         final EditText t4 = findViewById(R.id.pticket);
         final EditText t5 = findViewById(R.id.poffers);
 
