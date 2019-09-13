@@ -26,7 +26,7 @@ public class AddPackage2 extends AppCompatActivity {
 
         pid = findViewById(R.id.pid);
         pname = findViewById(R.id.pname);
-        ecategory = findViewById(R.id.ecategory);
+        ecategory = findViewById(R.id.eecategory);
         pticket = findViewById(R.id.pticket);
         poffers = findViewById(R.id.poffers);
 

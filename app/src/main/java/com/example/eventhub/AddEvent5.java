@@ -25,7 +25,7 @@ public class AddEvent5 extends AppCompatActivity {
 
         final EditText t1 = findViewById(R.id.eid);
         final EditText t2 = findViewById(R.id.ename);
-        final EditText t3 = findViewById(R.id.ecategory);
+        final EditText t3 = findViewById(R.id.eecategory);
         final EditText t4 = findViewById(R.id.evenue);
         //final EditText t5 = findViewById(R.id.EdayID);
 

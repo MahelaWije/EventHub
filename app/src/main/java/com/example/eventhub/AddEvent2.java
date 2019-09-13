@@ -23,7 +23,7 @@ import static android.text.TextUtils.isEmpty;
 public class AddEvent2 extends AppCompatActivity {
 
     Button add;
-    EditText eid, ename, ecategory, evenue;
+    EditText eid, ename, eecategory, evenue;
 
 
     @Override
@@ -33,7 +33,7 @@ public class AddEvent2 extends AppCompatActivity {
 
         eid = findViewById(R.id.eid);
         ename = findViewById(R.id.ename);
-        ecategory = findViewById(R.id.ecategory);
+        eecategory = findViewById(R.id.eecategory);
         evenue = findViewById(R.id.evenue);
 
 
@@ -55,7 +55,7 @@ public class AddEvent2 extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Please enter event ID", Toast.LENGTH_LONG).show();
                     else if (isEmpty((ename.getText().toString())))
                         Toast.makeText(getApplicationContext(), "Please enter event name", Toast.LENGTH_LONG).show();
-                    else if (isEmpty((ecategory.getText().toString())))
+                    else if (isEmpty((eecategory.getText().toString())))
                         Toast.makeText(getApplicationContext(), "Please enter event category", Toast.LENGTH_LONG).show();
                     else if (isEmpty((evenue.getText().toString())))
                         Toast.makeText(getApplicationContext(), "Please enter event venue", Toast.LENGTH_LONG).show();
@@ -70,7 +70,7 @@ public class AddEvent2 extends AppCompatActivity {
 
                         addEvent.setEventID(eid.getText().toString().trim());
                         addEvent.setEventName(ename.getText().toString().trim());
-                        addEvent.setCategory(ecategory.getText().toString().trim());
+                        addEvent.setCategory(eecategory.getText().toString().trim());
                         addEvent.setVenue(evenue.getText().toString().trim());
                     /*addEvent2.setCheckout(txtcheckout.getText().toString().trim());
                     addEvent2.setFullName(txtname.getText().toString().trim());
@@ -109,7 +109,7 @@ public class AddEvent2 extends AppCompatActivity {
             public void clearControls() {
                 eid.setText("");
                 ename.setText("");
-                ecategory.setText("");
+                eecategory.setText("");
                 evenue.setText("");
                     /*txtcontact.setText("");
                     txtnic.setText("");
