@@ -2,6 +2,7 @@ package com.example.eventhub;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -112,6 +113,12 @@ public class customer_form01 extends AppCompatActivity {
                     txtrooms.setText("");*/
             }
         });
+    }
+
+
+    public void  edit(View view) {
+        Intent intent1 = new Intent(customer_form01.this,customer_crud.class);
+        startActivity(intent1);
     }
     }
 

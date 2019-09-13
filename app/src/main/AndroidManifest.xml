@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddPackage2"></activity>
+        <activity android:name=".customer_crud"></activity>
+        <activity android:name=".customer_form02" />
+        <activity android:name=".AddPackage2" />
         <activity android:name=".customer_form01" />
         <activity android:name=".Login4" />
         <activity android:name=".Register" />
