@@ -116,11 +116,14 @@ public class customer_form01 extends AppCompatActivity {
     }
 
 
+
+
+
     public void  edit(View view) {
         Intent intent1 = new Intent(customer_form01.this,customer_crud.class);
         startActivity(intent1);
     }
-    }
+}
 
 
 

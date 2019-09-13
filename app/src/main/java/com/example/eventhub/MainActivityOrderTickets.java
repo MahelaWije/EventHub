@@ -23,7 +23,7 @@ public class MainActivityOrderTickets extends AppCompatActivity {
 
      public void gold01(View view){
 
-        Intent intent02 = new Intent(MainActivityOrderTickets.this, gold.class);
+        Intent intent02 = new Intent(MainActivityOrderTickets.this, customer_crud.class);
         startActivity(intent02);
 
      }
