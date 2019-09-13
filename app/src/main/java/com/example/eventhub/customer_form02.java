@@ -30,9 +30,9 @@ public class customer_form02 extends AppCompatActivity {
         final EditText t4 = findViewById(R.id.qty);
         //final EditText t5 = findViewById(R.id.EdayID);
 
-        Button btnView = findViewById(R.id.search);
-        Button btnUpdate = findViewById(R.id.update);
-        Button btnDelete = findViewById(R.id.delete);
+        Button btnView = findViewById(R.id.search1);
+        Button btnUpdate = findViewById(R.id.update1);
+        Button btnDelete = findViewById(R.id.delete1);
 
         //search Method//
 

@@ -3,7 +3,6 @@ package com.example.eventhub;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,18 +15,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class AddEvent5 extends AppCompatActivity {
+public class AddPackage5 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_event5);
+        setContentView(R.layout.activity_add_package5);
 
-        final EditText t1 = findViewById(R.id.eid);
-        final EditText t2 = findViewById(R.id.ename);
+        final EditText t1 = findViewById(R.id.pid);
+        final EditText t2 = findViewById(R.id.pname);
         final EditText t3 = findViewById(R.id.ecategory);
-        final EditText t4 = findViewById(R.id.evenue);
-        //final EditText t5 = findViewById(R.id.EdayID);
+        final EditText t4 = findViewById(R.id.pticket);
+        final EditText t5 = findViewById(R.id.poffers);
 
         Button btnView = findViewById(R.id.search1);
         Button btnUpdate = findViewById(R.id.update1);
@@ -35,19 +34,20 @@ public class AddEvent5 extends AppCompatActivity {
 
         //Search Method//
 
+
         btnView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference reafRef = FirebaseDatabase.getInstance().getReference().child("EventDetails").child(t1.getText().toString());
+                DatabaseReference reafRef = FirebaseDatabase.getInstance().getReference().child("PackageDetails").child(t1.getText().toString());
                 reafRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                         if (dataSnapshot.hasChildren()) {
-                            t2.setText(dataSnapshot.child("eventName").getValue().toString());
-                            t3.setText(dataSnapshot.child("category").getValue().toString());
-                            t4.setText(dataSnapshot.child("venue").getValue().toString());
-                            //t5.setText(dataSnapshot.child("exday").getValue().toString());
+                            t2.setText(dataSnapshot.child("PackageName").getValue().toString());
+                            t3.setText(dataSnapshot.child("Category").getValue().toString());
+                            t4.setText(dataSnapshot.child("TicketPrice").getValue().toString());
+                            t5.setText(dataSnapshot.child("Offers").getValue().toString());
                             Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
 
 
@@ -66,24 +66,24 @@ public class AddEvent5 extends AppCompatActivity {
 
         //Update Method
 
-       btnUpdate.setOnClickListener(new View.OnClickListener() {
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference updateRef = FirebaseDatabase.getInstance().getReference().child("EventDetails");
+                DatabaseReference updateRef = FirebaseDatabase.getInstance().getReference().child("PackageDetails");
                 updateRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        AddEvent addEvent = new AddEvent();
+                        AddPack addPack = new AddPack();
 
                         if(dataSnapshot.hasChild(t1.getText().toString())){
 
-                            addEvent.setEventName(t2.getText().toString());
-                            addEvent.setCategory(t3.getText().toString());
-                            addEvent.setVenue(t4.getText().toString());
-                            //ft.setExday(t5.getText().toString());
+                            addPack.setPackageName(t2.getText().toString());
+                            addPack.setCategory(t3.getText().toString());
+                            addPack.setTicketPrice(t4.getText().toString());
+                            addPack.setOffers(t5.getText().toString());
 
-                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("EventDetails").child(t1.getText().toString());
-                            dbRef.setValue(addEvent);
+                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("PackageDetails").child(t1.getText().toString());
+                            dbRef.setValue(addPack);
 
                             Toast.makeText(getApplicationContext(),"Data Update Successfully!",Toast.LENGTH_SHORT).show();
                         }
@@ -103,12 +103,12 @@ public class AddEvent5 extends AppCompatActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("EventDetails");
+                DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("PackageDetails");
                 delRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.hasChild(t1.getText().toString())){
-                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("EventDetails").child(t1.getText().toString());
+                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("PackageDetails").child(t1.getText().toString());
                             dbRef.removeValue();
 
                             Toast.makeText(getApplicationContext(),"Data deleted succesfully!",Toast.LENGTH_SHORT).show();
@@ -126,10 +126,4 @@ public class AddEvent5 extends AppCompatActivity {
             }
         });
     }
-
-    public void  startnextActivity1(View view) {
-        Intent intent1 = new Intent(AddEvent5.this,AddEvent4.class);
-        startActivity(intent1);
-    }
-
 }

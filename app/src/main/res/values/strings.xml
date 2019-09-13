@@ -196,5 +196,8 @@
     <string name="txtOf">Offers :</string>
     <string name="edt">Edit Your Details</string>
     <string name="paynw">Pay Now</string>
+    <string name="btnPsearch">SEARCH</string>
+    <string name="btnPdelete">DELETE</string>
+    <string name="btnPupdate">UPDATE</string>
 
 </resources>

@@ -68,7 +68,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/update"
+        android:id="@+id/update1"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_marginStart="8dp"

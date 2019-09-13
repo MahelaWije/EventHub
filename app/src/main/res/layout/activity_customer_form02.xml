@@ -138,7 +138,7 @@
         app:layout_constraintVertical_bias="0.42" />
 
     <Button
-        android:id="@+id/delete"
+        android:id="@+id/delete1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -154,7 +154,7 @@
         app:layout_constraintVertical_bias="0.736" />
 
     <Button
-        android:id="@+id/update"
+        android:id="@+id/update1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -170,7 +170,7 @@
         app:layout_constraintVertical_bias="0.721" />
 
     <Button
-        android:id="@+id/search"
+        android:id="@+id/search1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
