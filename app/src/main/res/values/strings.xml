@@ -191,5 +191,10 @@
     <string name="packageadd">Add</string>
     <string name="hintpack">eg : P001</string>
     <string name="addpack">Add</string>
+    <string name="txtPName">Package Name :</string>
+    <string name="txtTPrice">Ticket Price :</string>
+    <string name="txtOf">Offers :</string>
+    <string name="edt">Edit Your Details</string>
+    <string name="paynw">Pay Now</string>
 
 </resources>
