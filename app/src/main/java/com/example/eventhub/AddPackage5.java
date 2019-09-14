@@ -77,6 +77,7 @@ public class AddPackage5 extends AppCompatActivity {
 
                         if(dataSnapshot.hasChild(t1.getText().toString())){
 
+                            addPack.setPackageID(t1.getText().toString());
                             addPack.setPackageName(t2.getText().toString());
                             addPack.setCategory(t3.getText().toString());
                             addPack.setTicketPrice(t4.getText().toString());

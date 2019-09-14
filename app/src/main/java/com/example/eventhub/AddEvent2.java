@@ -23,7 +23,7 @@ import static android.text.TextUtils.isEmpty;
 public class AddEvent2 extends AppCompatActivity {
 
     Button add;
-    EditText eid, ename, eecategory, evenue;
+    EditText eid, ename, eecategory, evenue, etime;
 
 
     @Override
@@ -35,6 +35,7 @@ public class AddEvent2 extends AppCompatActivity {
         ename = findViewById(R.id.ename);
         eecategory = findViewById(R.id.eecategory);
         evenue = findViewById(R.id.evenue);
+        etime = findViewById(R.id.etime);
 
 
 
@@ -44,10 +45,8 @@ public class AddEvent2 extends AppCompatActivity {
 
             AddEvent addEvent = new AddEvent();
 
-            //@Override
+            @Override
             public void onClick(View view) {
-                //AddEvent2 addEvent2 = new AddEvent2();
-               // AddEvent2 addEvent2 = new AddEvent2();
 
                 DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("EventDetails");
                 try {
@@ -59,9 +58,9 @@ public class AddEvent2 extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Please enter event category", Toast.LENGTH_LONG).show();
                     else if (isEmpty((evenue.getText().toString())))
                         Toast.makeText(getApplicationContext(), "Please enter event venue", Toast.LENGTH_LONG).show();
-                /*else if (isEmpty((txtcontact.getText().toString())))
-                    Toast.makeText(getApplicationContext(), "Please enter your contact number", Toast.LENGTH_LONG).show();
-                else if (isEmpty((txtcheckin.getText().toString())))
+                    else if (isEmpty((etime.getText().toString())))
+                    Toast.makeText(getApplicationContext(), "Please enter event time", Toast.LENGTH_LONG).show();
+                /*else if (isEmpty((txtcheckin.getText().toString())))
                     Toast.makeText(getApplicationContext(), "Please enter your Check-In date", Toast.LENGTH_LONG).show();
                 else if (isEmpty((txtcheckout.getText().toString())))
                     Toast.makeText(getApplicationContext(), "Please enter your Check-Out date", Toast.LENGTH_LONG).show();*/
@@ -72,8 +71,8 @@ public class AddEvent2 extends AppCompatActivity {
                         addEvent.setEventName(ename.getText().toString().trim());
                         addEvent.setCategory(eecategory.getText().toString().trim());
                         addEvent.setVenue(evenue.getText().toString().trim());
-                    /*addEvent2.setCheckout(txtcheckout.getText().toString().trim());
-                    addEvent2.setFullName(txtname.getText().toString().trim());
+                        addEvent.setTime(etime.getText().toString().trim());
+                    /*addEvent2.setFullName(txtname.getText().toString().trim());
                     addEvent2.setAddress(txtaddress.getText().toString().trim());
 
                     try{
@@ -111,6 +110,7 @@ public class AddEvent2 extends AppCompatActivity {
                 ename.setText("");
                 eecategory.setText("");
                 evenue.setText("");
+                etime.setText("");
                     /*txtcontact.setText("");
                     txtnic.setText("");
                     txtrooms.setText("");*/

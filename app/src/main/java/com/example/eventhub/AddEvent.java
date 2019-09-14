@@ -4,7 +4,7 @@ public class AddEvent {
 
     private String eventID;
     private String eventName;
-    private String category;
+    private String evcategory;
     private String venue;
     private String date;
     private String time;
@@ -28,11 +28,11 @@ public class AddEvent {
     }
 
     public String getCategory() {
-        return category;
+        return evcategory;
     }
 
     public void setCategory(String category) {
-        this.category = category;
+        this.evcategory = category;
     }
 
     public String getVenue() {

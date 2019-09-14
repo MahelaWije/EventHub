@@ -27,7 +27,7 @@ public class AddEvent5 extends AppCompatActivity {
         final EditText t2 = findViewById(R.id.ename);
         final EditText t3 = findViewById(R.id.eecategory);
         final EditText t4 = findViewById(R.id.evenue);
-        //final EditText t5 = findViewById(R.id.EdayID);
+        final EditText t5 = findViewById(R.id.etime);
 
         Button btnView = findViewById(R.id.search1);
         Button btnUpdate = findViewById(R.id.update1);
@@ -47,12 +47,12 @@ public class AddEvent5 extends AppCompatActivity {
                             t2.setText(dataSnapshot.child("eventName").getValue().toString());
                             t3.setText(dataSnapshot.child("category").getValue().toString());
                             t4.setText(dataSnapshot.child("venue").getValue().toString());
-                            //t5.setText(dataSnapshot.child("exday").getValue().toString());
-                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+                            t5.setText(dataSnapshot.child("time").getValue().toString());
+                            Toast.makeText(getApplicationContext(), "Showing Details", Toast.LENGTH_SHORT).show();
 
 
                         } else {
-                            Toast.makeText(getApplicationContext(), "No source to display", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "No details to display", Toast.LENGTH_SHORT).show();
                         }
                     }
                     @Override
@@ -77,10 +77,11 @@ public class AddEvent5 extends AppCompatActivity {
 
                         if(dataSnapshot.hasChild(t1.getText().toString())){
 
+                            addEvent.setEventID(t1.getText().toString());
                             addEvent.setEventName(t2.getText().toString());
                             addEvent.setCategory(t3.getText().toString());
                             addEvent.setVenue(t4.getText().toString());
-                            //ft.setExday(t5.getText().toString());
+                            addEvent.setTime(t5.getText().toString());
 
                             DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("EventDetails").child(t1.getText().toString());
                             dbRef.setValue(addEvent);
@@ -88,7 +89,7 @@ public class AddEvent5 extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"Data Update Successfully!",Toast.LENGTH_SHORT).show();
                         }
                         else{
-                            Toast.makeText(getApplicationContext(),"No sourse to update ",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"No details to update ",Toast.LENGTH_SHORT).show();
                         }
                     }
 
