@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -123,9 +124,9 @@ public class AllEvents extends AppCompatActivity {
 
        @NonNull @Override
 
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(final int position, @Nullable final View convertView, @NonNull ViewGroup parent) {
            LayoutInflater layoutInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-           View evrow = layoutInflater.inflate(R.layout.event_row, parent, false);
+           final View evrow = layoutInflater.inflate(R.layout.event_row, parent, false);
 
            TextView tvevID = evrow.findViewById(R.id.tvevID);
            TextView tvevName = evrow.findViewById(R.id.tvevName);
@@ -139,6 +140,16 @@ public class AllEvents extends AppCompatActivity {
            tvcategory.setText(category.get(position).toString());
            tvvenue.setText(venue.get(position).toString());
            tvtime.setText(time.get(position).toString());
+
+           evrow.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                   Intent intent = new Intent(getContext(), AddEvent5.class);
+                   intent.putExtra("eventID", eventID.get(position).toString());
+                   intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                   view.getContext().startActivity(intent);
+               }
+           });
 
            return evrow;
 

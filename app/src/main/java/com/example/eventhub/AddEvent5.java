@@ -23,6 +23,10 @@ public class AddEvent5 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_event5);
 
+        Intent intent = getIntent();
+        String id = intent.getStringExtra("eventID");
+
+
         final EditText t1 = findViewById(R.id.eid);
         final EditText t2 = findViewById(R.id.ename);
         final EditText t3 = findViewById(R.id.eecategory);
@@ -33,6 +37,7 @@ public class AddEvent5 extends AppCompatActivity {
         Button btnUpdate = findViewById(R.id.update1);
         Button btnDelete = findViewById(R.id.delete1);
 
+        t1.setText(id);
         //Search Method//
 
         btnView.setOnClickListener(new View.OnClickListener() {
