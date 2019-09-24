@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +22,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class AllPackages extends AppCompatActivity {
+import static com.example.eventhub.R.layout.package_row;
+
+public class AllPackagesNew extends AppCompatActivity {
 
     ListView packListview;
 
@@ -30,12 +33,11 @@ public class AllPackages extends AppCompatActivity {
     ArrayList<String> packagecategory;
     ArrayList<String> ticketPrice;
     ArrayList<String> offers;
-    //ArrayList<String> photo_link;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_packages);
+        setContentView(R.layout.activity_all_packages_new);
 
         packListview = findViewById(R.id.packListview);
 
@@ -75,7 +77,7 @@ public class AllPackages extends AppCompatActivity {
                             ticketPrice.add(strticket);
                             offers.add(stroffers);
 
-                            MyEventAdapter adapter = new MyEventAdapter(getApplicationContext(),packageID,packageName,packagecategory,ticketPrice,offers);
+                            MyPackageAdapter1 adapter = new MyPackageAdapter1(getApplicationContext(),packageID,packageName,packagecategory,ticketPrice,offers);
                             packListview.setAdapter(adapter);
                         }
 
@@ -96,7 +98,7 @@ public class AllPackages extends AppCompatActivity {
 
     } }
 
-class MyPackageAdapter extends ArrayAdapter<String> {
+class MyPackageAdapter1 extends ArrayAdapter<String> {
     private final ArrayList packageID;
     private final ArrayList packageName;
     private final ArrayList packagecategory;
@@ -104,8 +106,8 @@ class MyPackageAdapter extends ArrayAdapter<String> {
     private final ArrayList offers;
     Context c;
 
-    MyPackageAdapter(Context c, ArrayList packageID, ArrayList packageName, ArrayList packagecategory, ArrayList ticketPrice, ArrayList offers) {
-        super(c, R.layout.event_row, R.id.tvevID, packageID);
+    MyPackageAdapter1(Context c, ArrayList packageID, ArrayList packageName, ArrayList packagecategory, ArrayList ticketPrice, ArrayList offers) {
+        super(c, package_row, R.id.tvpID, packageID);
         this.c = c;
 
         this.packageID = packageID;
@@ -118,15 +120,15 @@ class MyPackageAdapter extends ArrayAdapter<String> {
 
     @NonNull @Override
 
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater layoutInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View evrow = layoutInflater.inflate(R.layout.event_row, parent, false);
+        View row = layoutInflater.inflate(package_row, parent, false);
 
-        TextView tvpID = evrow.findViewById(R.id.tvpID);
-        TextView tvpName = evrow.findViewById(R.id.tvpName);
-        TextView tvpcategory = evrow.findViewById(R.id.tvpcategory);
-        TextView tvpticket = evrow.findViewById(R.id.tvpticket);
-        TextView tvpoffers = evrow.findViewById(R.id.tvpoffers);
+        TextView tvpID = row.findViewById(R.id.tvpID);
+        TextView tvpName = row.findViewById(R.id.tvpName);
+        TextView tvpcategory = row.findViewById(R.id.tvpcategory);
+        TextView tvpticket = row.findViewById(R.id.tvpticket);
+        TextView tvpoffers = row.findViewById(R.id.tvpoffers);
         //ImageView stdPhoto = stdrow.findViewById(R.id.stdPhoto);
 
         tvpID.setText(packageID.get(position).toString());
@@ -135,7 +137,19 @@ class MyPackageAdapter extends ArrayAdapter<String> {
         tvpticket.setText(ticketPrice.get(position).toString());
         tvpoffers.setText(offers.get(position).toString());
 
-        return evrow;
+        row.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), AddPackage5.class);
+                intent.putExtra("packageID", packageID.get(position).toString());
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                view.getContext().startActivity(intent);
+            }
+        });
+
+        return row;
 
     }
 }
+
+

@@ -3,6 +3,7 @@ package com.example.eventhub;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +23,9 @@ public class AddPackage5 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_package5);
 
+        Intent intent = getIntent();
+        String pid = intent.getStringExtra("packageID");
+
         final EditText t1 = findViewById(R.id.pid);
         final EditText t2 = findViewById(R.id.pname);
         final EditText t3 = findViewById(R.id.pcategory);
@@ -31,6 +35,8 @@ public class AddPackage5 extends AppCompatActivity {
         Button btnView = findViewById(R.id.search1);
         Button btnUpdate = findViewById(R.id.update1);
         Button btnDelete = findViewById(R.id.delete1);
+
+        t1.setText(pid);
 
         //Search Method//
 
@@ -44,10 +50,10 @@ public class AddPackage5 extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                         if (dataSnapshot.hasChildren()) {
-                            t2.setText(dataSnapshot.child("PackageName").getValue().toString());
-                            t3.setText(dataSnapshot.child("Category").getValue().toString());
-                            t4.setText(dataSnapshot.child("TicketPrice").getValue().toString());
-                            t5.setText(dataSnapshot.child("Offers").getValue().toString());
+                            t2.setText(dataSnapshot.child("packageName").getValue().toString());
+                            t3.setText(dataSnapshot.child("category").getValue().toString());
+                            t4.setText(dataSnapshot.child("ticketPrice").getValue().toString());
+                            t5.setText(dataSnapshot.child("offers").getValue().toString());
                             Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
 
 

@@ -138,4 +138,9 @@ public class AddEvent5 extends AppCompatActivity {
         startActivity(intent1);
     }
 
+    public void startnextActivity2(View view) {
+        Intent intent1 = new Intent(AddEvent5.this, AddEvent1.class);
+        startActivity(intent1);
+    }
+
 }
