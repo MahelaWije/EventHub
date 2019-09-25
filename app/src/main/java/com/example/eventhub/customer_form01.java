@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -25,7 +26,13 @@ public class customer_form01 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_form01);
 
-
+        Intent intent = getIntent();
+        String eid =  intent.getStringExtra("eventID");
+        TextView cevID = findViewById(R.id.event);
+        cevID.setText(eid);
+        String pid =  intent.getStringExtra("packageID");
+        TextView cpackID = findViewById(R.id.pkg);
+        cpackID.setText(pid);
 
         cusid = findViewById(R.id.cusid);
         event = findViewById(R.id.event);

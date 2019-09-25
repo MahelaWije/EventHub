@@ -34,7 +34,13 @@ public class WishMainActivity extends AppCompatActivity {
 
     public void startSearchList(View view){
 
-        Intent intent = new Intent(WishMainActivity.this,SearchList.class);
+        Intent intent = new Intent(WishMainActivity.this,CustomerEventList.class);
+        startActivity(intent);
+    }
+
+    public void startPackList(View view){
+
+        Intent intent = new Intent(WishMainActivity.this,CustomerPackageList.class);
         startActivity(intent);
     }
 }

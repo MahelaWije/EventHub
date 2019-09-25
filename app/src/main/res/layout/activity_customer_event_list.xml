@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".CustomerEventList">
 
     <TextView
         android:id="@+id/textView7"
@@ -27,13 +28,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.042" />
 
-
     <ListView
-        android:id="@+id/evListview"
+        android:id="@+id/customerevListview"
         android:layout_marginTop="100dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
