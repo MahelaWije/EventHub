@@ -207,5 +207,7 @@
     <string name="eventlist">EVENT LIST</string>
     <string name="addpkg">ADD PACKAGE</string>
     <string name="pkglist">PACKAGE LIST</string>
+    <string name="slctedevn">Selected Event :</string>
+    <string name="selctedpkg">Selected Package :</string>
 
 </resources>
