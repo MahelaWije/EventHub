@@ -15,7 +15,7 @@ public class customer_main extends AppCompatActivity {
     }
 
     public void  cusmain02(View view) {
-        Intent intent1 = new Intent(customer_main.this,customer_form01.class);
+        Intent intent1 = new Intent(customer_main.this,CustomerEventList.class);
         startActivity(intent1);
     }
 }

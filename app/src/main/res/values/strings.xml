@@ -209,5 +209,6 @@
     <string name="pkglist">PACKAGE LIST</string>
     <string name="slctedevn">Selected Event :</string>
     <string name="selctedpkg">Selected Package :</string>
+    <string name="next">Next</string>
 
 </resources>
