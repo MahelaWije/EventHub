@@ -140,7 +140,7 @@ class Mycustomer1Adapter extends ArrayAdapter<String> {
         evrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), customer_form01.class);
+                Intent intent = new Intent(getContext(), CustomerPackageList.class);
                 intent.putExtra("eventID", eventID.get(position).toString());
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 view.getContext().startActivity(intent);

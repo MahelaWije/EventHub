@@ -27,25 +27,29 @@ import static com.example.eventhub.R.layout.package_row;
 
 public class CustomerPackageList extends AppCompatActivity {
 
-    //Intent intent = getIntent();
-    //String eid =  intent.getStringExtra("eventID");
-
-
     ListView cuspackListview;
-
+    public String eid;
     ArrayList<String> packageID;
     ArrayList<String> packageName;
     ArrayList<String> packagecategory;
     ArrayList<String> ticketPrice;
     ArrayList<String> offers;
+    ArrayList<String> selectedEvent;
+    String eventid="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_package_list);
 
-        //TextView cevID = findViewById(R.id.cuseventid);
-        //cevID.setText(eid);
+
+
+        Intent intent = getIntent();
+         eid =  intent.getStringExtra("eventID");
+        TextView cevID = findViewById(R.id.txtVw);
+        cevID.setText(eid);
+        eventid= cevID.getText().toString();
+//       MyCustomerPackageAdapter1 adObj = new MyCustomerPackageAdapter1();
 
         cuspackListview = findViewById(R.id.cuspackListview);
 
@@ -54,6 +58,7 @@ public class CustomerPackageList extends AppCompatActivity {
         packagecategory = new ArrayList<String>();
         ticketPrice = new ArrayList<String>();
         offers = new ArrayList<String>();
+        selectedEvent = new ArrayList<String>();
         //photo_link = new ArrayList<String>();
 
         final ArrayList<String> PackStrList = new ArrayList<>();
@@ -79,13 +84,15 @@ public class CustomerPackageList extends AppCompatActivity {
                             strpcategory = dataSnapshot.child("category").getValue().toString();
                             strticket = dataSnapshot.child("ticketPrice").getValue().toString();
                             stroffers = dataSnapshot.child("offers").getValue().toString();
+
                             packageID.add(strpid);
                             packageName.add(strpName);
                             packagecategory.add(strpcategory);
                             ticketPrice.add(strticket);
                             offers.add(stroffers);
+                            selectedEvent.add(eventid);
 
-                            MyCustomerPackageAdapter1 adapter = new MyCustomerPackageAdapter1(getApplicationContext(),packageID,packageName,packagecategory,ticketPrice,offers);
+                            MyCustomerPackageAdapter1 adapter = new MyCustomerPackageAdapter1(getApplicationContext(),packageID,packageName,packagecategory,ticketPrice,offers,selectedEvent);
                             cuspackListview.setAdapter(adapter);
                         }
 
@@ -112,9 +119,11 @@ class MyCustomerPackageAdapter1 extends ArrayAdapter<String> {
     private final ArrayList packagecategory;
     private final ArrayList ticketPrice;
     private final ArrayList offers;
+    private final ArrayList selectedEv;
     Context c;
 
-    MyCustomerPackageAdapter1(Context c, ArrayList packageID, ArrayList packageName, ArrayList packagecategory, ArrayList ticketPrice, ArrayList offers) {
+
+    MyCustomerPackageAdapter1(Context c, ArrayList packageID, ArrayList packageName, ArrayList packagecategory, ArrayList ticketPrice, ArrayList offers, ArrayList selectedEvent) {
         super(c, customerpack, R.id.custvpID, packageID);
         this.c = c;
 
@@ -123,6 +132,7 @@ class MyCustomerPackageAdapter1 extends ArrayAdapter<String> {
         this.packagecategory = packagecategory;
         this.ticketPrice = ticketPrice;
         this.offers = offers;
+        this.selectedEv = selectedEvent;
     }
 
 
@@ -137,6 +147,7 @@ class MyCustomerPackageAdapter1 extends ArrayAdapter<String> {
         TextView custvpcategory = row.findViewById(R.id.custvpcategory);
         TextView custvpticket = row.findViewById(R.id.custvpticket);
         TextView custvpoffers = row.findViewById(R.id.custvpoffers);
+        TextView selectedEvent = row.findViewById(R.id.cuseventid);
         //ImageView stdPhoto = stdrow.findViewById(R.id.stdPhoto);
 
 
@@ -147,13 +158,14 @@ class MyCustomerPackageAdapter1 extends ArrayAdapter<String> {
         custvpcategory.setText(packagecategory.get(position).toString());
         custvpticket.setText(ticketPrice.get(position).toString());
         custvpoffers.setText(offers.get(position).toString());
+        selectedEvent.setText(selectedEv.get(position).toString());
 
         row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), customer_form01.class);
                 intent.putExtra("packageID", packageID.get(position).toString());
-                //intent.putExtra("eventID", eid);
+                intent.putExtra("eventID", selectedEv.get(position).toString());
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 view.getContext().startActivity(intent);
             }
