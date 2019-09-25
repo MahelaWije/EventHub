@@ -48,4 +48,9 @@ public class AddEvent1 extends AppCompatActivity {
         Intent intent1 = new Intent(AddEvent1.this,AllPackagesNew.class);
         startActivity(intent1);
     }
+
+    public void  startnextActivity8(View view) {
+        Intent intent1 = new Intent(AddEvent1.this,ConfirmedEvents.class);
+        startActivity(intent1);
+    }
 }
