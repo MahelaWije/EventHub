@@ -34,16 +34,12 @@
         <activity android:name=".AddEvent1" />
         <activity android:name=".TheWishlist" />
         <activity android:name=".SearchList" />
-        <activity android:name=".Location" />
         <activity android:name=".Type" />
         <activity android:name=".Date" />
         <activity android:name=".WishMainActivity" />
-        <activity android:name=".barCode" />
-        <activity android:name=".details" />
         <activity android:name=".ticketBalcony" />
         <activity android:name=".ticketBack" />
         <activity android:name=".ticketFront" />
-        <activity android:name=".gold" />
         <activity android:name=".platinum" />
         <activity android:name=".MainActivityOrderTickets" />
         <activity android:name=".Success" />
