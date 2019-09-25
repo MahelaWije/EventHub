@@ -80,10 +80,8 @@
         android:layout_width="163dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="#00FC0314"
         android:onClick="startDate"
@@ -92,10 +90,10 @@
         android:textColorHighlight="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintHorizontal_bias="0.228"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.164" />
+        app:layout_constraintVertical_bias="0.031" />
 
     <Button
         android:id="@+id/button5"
@@ -117,56 +115,35 @@
         app:layout_constraintVertical_bias="0.88" />
 
     <EditText
-        android:id="@+id/editText2"
-        android:layout_width="145dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/editText2"
-        android:textColor="#8B8989"
-        android:textColorHighlight="#FFFFFF"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button" />
-
-    <EditText
         android:id="@+id/editText3"
         android:layout_width="145dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/editText3"
         android:textColor="#8B8989"
         android:textColorHighlight="#FFFFFF"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button2" />
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        tools:layout_editor_absoluteY="369dp" />
 
     <EditText
         android:id="@+id/eid"
         android:layout_width="145dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/editText4"
         android:textColor="#8B8989"
         android:textColorHighlight="#FFFFFF"
         android:textColorHint="#00FFFFFF"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3" />
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        tools:layout_editor_absoluteY="445dp" />
 
     <Button
         android:id="@+id/button25"

@@ -3,37 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/logoback"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
-    tools:context=".AllPackagesNew">
+    tools:context=".customer_main">
 
-    <TextView
-        android:id="@+id/textView43"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/button36"
+        android:layout_width="112dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Package List"
-        android:textAlignment="center"
-        android:textColor="#0F0F0F"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:fontFamily="sans-serif"
+        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
-
-    <ListView
-        android:id="@+id/packListview"
-        android:layout_marginTop="100dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
-
-
+        app:layout_constraintVertical_bias="0.96" />
 </androidx.constraintlayout.widget.ConstraintLayout>

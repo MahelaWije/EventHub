@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ConfirmedEvents"></activity>
+        <activity android:name=".customer_main"></activity>
+        <activity android:name=".pkg_list" />
+        <activity android:name=".event_list" />
+        <activity android:name=".admin_menu" />
+        <activity android:name=".ConfirmedEvents" />
         <activity android:name=".CustomerPackageList" />
         <activity android:name=".CustomerEventList" />
         <activity android:name=".AllPackagesNew" />

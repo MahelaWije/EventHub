@@ -45,6 +45,7 @@ public class customer_form02 extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                         if (dataSnapshot.hasChildren()) {
+                            t1.setText(dataSnapshot.child("customerID").getValue().toString());
                             t2.setText(dataSnapshot.child("event").getValue().toString());
                             t3.setText(dataSnapshot.child("pkg").getValue().toString());
                             t4.setText(dataSnapshot.child("qty").getValue().toString());
