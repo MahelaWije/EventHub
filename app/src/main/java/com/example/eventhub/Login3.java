@@ -14,8 +14,8 @@ public class Login3 extends AppCompatActivity {
         setContentView(R.layout.activity_login3);
     }
 
-    public void  startnextActivity1(View view) {
-        Intent intent1 = new Intent(Login3.this,AddEvent1.class);
+    public void  adminmenu(View view) {
+        Intent intent1 = new Intent(Login3.this,admin_menu.class);
         startActivity(intent1);
     }
 }
