@@ -33,14 +33,12 @@
             android:label="@string/title_activity_add_event2" />
         <activity android:name=".AddEvent1" />
         <activity android:name=".TheWishlist" />
-        <activity android:name=".SearchList" />
         <activity android:name=".Type" />
         <activity android:name=".Date" />
         <activity android:name=".WishMainActivity" />
         <activity android:name=".ticketBalcony" />
         <activity android:name=".ticketBack" />
         <activity android:name=".ticketFront" />
-        <activity android:name=".platinum" />
         <activity android:name=".Success" />
         <activity android:name=".purchase" />
         <activity android:name=".updateCard" />
