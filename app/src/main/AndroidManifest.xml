@@ -41,7 +41,6 @@
         <activity android:name=".ticketBack" />
         <activity android:name=".ticketFront" />
         <activity android:name=".platinum" />
-        <activity android:name=".MainActivityOrderTickets" />
         <activity android:name=".Success" />
         <activity android:name=".purchase" />
         <activity android:name=".updateCard" />
