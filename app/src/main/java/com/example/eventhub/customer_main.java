@@ -14,7 +14,7 @@ public class customer_main extends AppCompatActivity {
         setContentView(R.layout.activity_customer_main);
     }
 
-    public void  startnextActivity1(View view) {
+    public void  cusmain02(View view) {
         Intent intent1 = new Intent(customer_main.this,customer_form01.class);
         startActivity(intent1);
     }
