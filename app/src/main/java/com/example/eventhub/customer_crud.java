@@ -19,4 +19,11 @@ public class customer_crud extends AppCompatActivity {
         Intent intent1 = new Intent(customer_crud.this,customer_form02.class);
         startActivity(intent1);
     }
+
+    public void  edit1(View view) {
+        Intent intent1 = new Intent(customer_crud.this,cardpayment.class);
+        startActivity(intent1);
+    }
+
+
 }
