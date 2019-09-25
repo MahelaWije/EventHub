@@ -19,10 +19,7 @@ public class AddEvent1 extends AppCompatActivity {
         startActivity(intent1);
     }
 
-    public void  startnextActivity2(View view) {
-        Intent intent1 = new Intent(AddEvent1.this,AddEvent4.class);
-        startActivity(intent1);
-    }
+
 
     public void  startnextActivity3(View view) {
         Intent intent1 = new Intent(AddEvent1.this,Login2.class);

@@ -26,15 +26,12 @@
         <activity android:name=".Login4" />
         <activity android:name=".Register" />
         <activity android:name=".AddEvent5" />
-        <activity android:name=".AddEvent4" />
         <activity android:name=".AddEvent3" />
         <activity
             android:name=".AddEvent2"
             android:label="@string/title_activity_add_event2" />
         <activity android:name=".AddEvent1" />
-        <activity android:name=".TheWishlist" />
         <activity android:name=".Date" />
-        <activity android:name=".WishMainActivity" />
         <activity android:name=".Success" />
         <activity android:name=".purchase" />
         <activity android:name=".updateCard" />

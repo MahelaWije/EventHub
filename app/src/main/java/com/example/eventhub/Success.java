@@ -15,10 +15,6 @@ public class Success extends AppCompatActivity {
     }
 
 
-    public void  success01(View view) {
-        Intent intent1 = new Intent(Success.this,TheWishlist.class);
-        startActivity(intent1);
-    }
 
 
     public void  logout01(View view) {

@@ -14,8 +14,10 @@ public class Login4 extends AppCompatActivity {
         setContentView(R.layout.activity_login4);
     }
 
-    public void  startnextActivity1(View view) {
-        Intent intent1 = new Intent(Login4.this,WishMainActivity.class);
+    public void  cusmain01(View view) {
+        Intent intent1 = new Intent(Login4.this,customer_main.class);
         startActivity(intent1);
     }
+
+
 }

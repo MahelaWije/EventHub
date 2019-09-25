@@ -14,9 +14,5 @@ public class Date extends AppCompatActivity {
         setContentView(R.layout.activity_date);
     }
 
-    public void startWishMain(View view){
 
-        Intent intent = new Intent(Date.this,WishMainActivity.class);
-        startActivity(intent);
-    }
 }
