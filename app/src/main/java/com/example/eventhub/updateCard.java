@@ -16,6 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import static android.text.TextUtils.isEmpty;
+
 public class updateCard extends AppCompatActivity {
 
     @Override
@@ -77,20 +79,35 @@ public class updateCard extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         payy c = new payy();
 
-                        if(dataSnapshot.hasChild(t1.getText().toString())){
+                        if(dataSnapshot.hasChild(t1.getText().toString())) {
 
-                            c.setPaynum(t1.getText().toString());
-                            c.setPayname(t2.getText().toString());
-                            c.setPaycvv(t3.getText().toString());
-                            c.setPayexd(t4.getText().toString());
-                            //ft.setExday(t5.getText().toString());
 
-                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("payment").child(t1.getText().toString());
-                            dbRef.setValue(c);
+                            try {
+                                if (isEmpty(t1.getText().toString()))
+                                    Toast.makeText(getApplicationContext(), "Please enter package ID", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t2.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter package name", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t3.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter package category", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t4.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter Ticket Price", Toast.LENGTH_LONG).show();
+                                else {
 
-                            Toast.makeText(getApplicationContext(),"Data Update Successfully!",Toast.LENGTH_SHORT).show();
-                        }
-                        else{
+                                    c.setPaynum(t1.getText().toString());
+                                    c.setPayname(t2.getText().toString());
+                                    c.setPaycvv(t3.getText().toString());
+                                    c.setPayexd(t4.getText().toString());
+                                    //ft.setExday(t5.getText().toString());
+
+                                    DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("payment").child(t1.getText().toString());
+                                    dbRef.setValue(c);
+
+                                    Toast.makeText(getApplicationContext(), "Data Update Successfully!", Toast.LENGTH_SHORT).show();
+                                }
+                            } catch (Exception e1) {
+                                Toast.makeText(getApplicationContext(), "Error" + e1, Toast.LENGTH_LONG).show();
+                            }
+                        }else{
                             Toast.makeText(getApplicationContext(),"No sourse to update ",Toast.LENGTH_SHORT).show();
                         }
                     }

@@ -159,6 +159,8 @@
         android:background="@drawable/round_btn"
         android:onClick="update01"
         android:text="@string/txtedittext"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -168,9 +170,9 @@
         app:layout_constraintVertical_bias="0.853" />
 
     <Button
-        android:id="@+id/adbtn1"
-        android:layout_width="105dp"
-        android:layout_height="47dp"
+        android:id="@+id/button3"
+        android:layout_width="308dp"
+        android:layout_height="49dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -178,13 +180,15 @@
         android:background="@drawable/round_btn"
         android:onClick="succuss01"
         android:text="@string/textplaceorder"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.617"
+        app:layout_constraintHorizontal_bias="0.563"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.953" />
+        app:layout_constraintVertical_bias="0.959" />
 
     <TextView
         android:id="@+id/textView19"
