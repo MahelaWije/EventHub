@@ -217,5 +217,7 @@
     <string name="next">Next</string>
     <string name="addpkg02">Add a Package</string>
     <string name="pkgg">Package :</string>
+    <string name="adddetails">Add Details</string>
+    <string name="getstarted">Get Started</string>
 
 </resources>

@@ -2,6 +2,7 @@ package com.example.eventhub;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -110,5 +111,11 @@ public class AddPackage2 extends AppCompatActivity {
                     txtrooms.setText("");*/
             }
         });
+    }
+
+
+    public void startnextActivity2(View view) {
+        Intent intent1 = new Intent(AddPackage2.this, pkg_list.class);
+        startActivity(intent1);
     }
 }

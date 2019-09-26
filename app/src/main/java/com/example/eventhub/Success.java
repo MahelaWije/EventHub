@@ -18,7 +18,7 @@ public class Success extends AppCompatActivity {
 
 
     public void  logout01(View view) {
-        Intent intent1 = new Intent(Success.this,Login2.class);
+        Intent intent1 = new Intent(Success.this,customer_main.class);
         startActivity(intent1);
     }
 }

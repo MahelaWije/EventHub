@@ -95,13 +95,13 @@ public class customer_form02 extends AppCompatActivity {
 
                             try {
                                 if (isEmpty(t1.getText().toString()))
-                                    Toast.makeText(getApplicationContext(), "Please enter event ID", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), "Please enter customer ID", Toast.LENGTH_LONG).show();
                                 else if (isEmpty((t2.getText().toString())))
                                     Toast.makeText(getApplicationContext(), "Please enter event name", Toast.LENGTH_LONG).show();
                                 else if (isEmpty((t3.getText().toString())))
                                     Toast.makeText(getApplicationContext(), "Please enter event category", Toast.LENGTH_LONG).show();
                                 else if (isEmpty((t4.getText().toString())))
-                                    Toast.makeText(getApplicationContext(), "Please enter event venue", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), "Please enter quantity", Toast.LENGTH_LONG).show();
                                 else if (isEmpty((t5.getText().toString())))
                                     Toast.makeText(getApplicationContext(), "Please enter your contact number", Toast.LENGTH_LONG).show();
                                 else if (isEmpty((t6.getText().toString())))

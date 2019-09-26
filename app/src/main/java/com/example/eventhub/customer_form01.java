@@ -67,13 +67,13 @@ public class customer_form01 extends AppCompatActivity {
                 DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("CustomerEvent");
                 try {
                     if (isEmpty(cusid.getText().toString()))
-                        Toast.makeText(getApplicationContext(), "Please enter event ID", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Please enter customer ID", Toast.LENGTH_LONG).show();
                     else if (isEmpty((event.getText().toString())))
                         Toast.makeText(getApplicationContext(), "Please enter event name", Toast.LENGTH_LONG).show();
                     else if (isEmpty((pkg.getText().toString())))
                         Toast.makeText(getApplicationContext(), "Please enter event category", Toast.LENGTH_LONG).show();
                     else if (isEmpty((qty.getText().toString())))
-                        Toast.makeText(getApplicationContext(), "Please enter event venue", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Please enter  quantity", Toast.LENGTH_LONG).show();
                     else if (isEmpty((cno.getText().toString())))
                     Toast.makeText(getApplicationContext(), "Please enter your contact number", Toast.LENGTH_LONG).show();
                     else if (isEmpty((custemail.getText().toString())))
