@@ -14,8 +14,8 @@ public class cardpayment extends AppCompatActivity {
         setContentView(R.layout.activity_cardpayment);
     }
 
-    public void payment01(View view){
-        Intent intent0001 = new Intent(cardpayment.this, purchase.class);
+    public void payment(View view){
+        Intent intent0001 = new Intent(cardpayment.this, updateCard.class);
         startActivity(intent0001);
     }
 }
