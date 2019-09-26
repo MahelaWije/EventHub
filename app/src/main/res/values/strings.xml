@@ -158,7 +158,7 @@
 
 
     <string name="txtpay">PAYMENT</string>
-    <string name="txt00001">Fill The Following Details for the Online Payment</string>
+    <string name="txt00001">Fill the following details for the online Payment</string>
     <string name="textcardtype">Card Type</string>
     <string name="radiocard01">VISA</string>
     <string name="radiocard02">MASTER</string>
