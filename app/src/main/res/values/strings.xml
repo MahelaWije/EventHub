@@ -210,5 +210,7 @@
     <string name="slctedevn">Selected Event :</string>
     <string name="selctedpkg">Selected Package :</string>
     <string name="next">Next</string>
+    <string name="addpkg02">Add a Package</string>
+    <string name="pkgg">Package :</string>
 
 </resources>
