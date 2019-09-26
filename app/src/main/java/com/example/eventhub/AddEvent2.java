@@ -23,7 +23,7 @@ import static android.text.TextUtils.isEmpty;
 public class AddEvent2 extends AppCompatActivity {
 
     Button add;
-    EditText eid, ename, eecategory, evenue, etime;
+    EditText eid, ename, eecategory, evenue, etime, evdate;
 
 
     @Override
@@ -35,6 +35,7 @@ public class AddEvent2 extends AppCompatActivity {
         ename = findViewById(R.id.ename);
         eecategory = findViewById(R.id.eecategory);
         evenue = findViewById(R.id.evenue);
+        evdate = findViewById(R.id.evdate);
         etime = findViewById(R.id.etime);
 
 
@@ -58,6 +59,8 @@ public class AddEvent2 extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Please enter event category", Toast.LENGTH_LONG).show();
                     else if (isEmpty((evenue.getText().toString())))
                         Toast.makeText(getApplicationContext(), "Please enter event venue", Toast.LENGTH_LONG).show();
+                    else if (isEmpty((evdate.getText().toString())))
+                        Toast.makeText(getApplicationContext(), "Please enter event date", Toast.LENGTH_LONG).show();
                     else if (isEmpty((etime.getText().toString())))
                     Toast.makeText(getApplicationContext(), "Please enter event time", Toast.LENGTH_LONG).show();
                 /*else if (isEmpty((txtcheckin.getText().toString())))
@@ -71,6 +74,7 @@ public class AddEvent2 extends AppCompatActivity {
                         addEvent.setEventName(ename.getText().toString().trim());
                         addEvent.setCategory(eecategory.getText().toString().trim());
                         addEvent.setVenue(evenue.getText().toString().trim());
+                        addEvent.setDate(evdate.getText().toString().trim());
                         addEvent.setTime(etime.getText().toString().trim());
                     /*addEvent2.setFullName(txtname.getText().toString().trim());
                     addEvent2.setAddress(txtaddress.getText().toString().trim());
@@ -110,6 +114,7 @@ public class AddEvent2 extends AppCompatActivity {
                 ename.setText("");
                 eecategory.setText("");
                 evenue.setText("");
+                evdate.setText("");
                 etime.setText("");
                     /*txtcontact.setText("");
                     txtnic.setText("");
@@ -120,13 +125,9 @@ public class AddEvent2 extends AppCompatActivity {
        //}*/
 
 
-            public void startnextActivity1(View view) {
-                Intent intent1 = new Intent(AddEvent2.this, AddEvent3.class);
-                startActivity(intent1);
-            }
 
             public void startnextActivity2(View view) {
-                Intent intent1 = new Intent(AddEvent2.this, AddEvent1.class);
+                Intent intent1 = new Intent(AddEvent2.this, admin_menu.class);
                 startActivity(intent1);
             }
 

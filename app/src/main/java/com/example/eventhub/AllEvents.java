@@ -35,7 +35,7 @@ public class AllEvents extends AppCompatActivity {
     ArrayList<String> category;
     ArrayList<String> venue;
     ArrayList<String> time;
-    //ArrayList<String> photo_link;
+    ArrayList<String> date;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -50,7 +50,7 @@ public class AllEvents extends AppCompatActivity {
         category = new ArrayList<String>();
         venue = new ArrayList<String>();
         time = new ArrayList<String>();
-        //photo_link = new ArrayList<String>();
+        date = new ArrayList<String>();
 
         final ArrayList<String> EvStrList = new ArrayList<>();
         DatabaseReference readRef1 = FirebaseDatabase.getInstance().getReference().child("EventDetails");
@@ -68,20 +68,22 @@ public class AllEvents extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                            String streid, streName, strecategory, strvenue, strtime;
+                            String streid, streName, strecategory, strvenue, strtime, strdate;
 
                             streid = dataSnapshot.child("eventID").getValue().toString();
                             streName = dataSnapshot.child("eventName").getValue().toString();
                             strecategory = dataSnapshot.child("category").getValue().toString();
                             strvenue = dataSnapshot.child("venue").getValue().toString();
                             strtime = dataSnapshot.child("time").getValue().toString();
+                            strdate = dataSnapshot.child("date").getValue().toString();
                             eventID.add(streid);
                             eventName.add(streName);
                             category.add(strecategory);
                             venue.add(strvenue);
                             time.add(strtime);
+                            date.add(strdate);
 
-                            MyEventAdapter adapter = new MyEventAdapter(getApplicationContext(),eventID,eventName,category,venue,time);
+                            MyEventAdapter adapter = new MyEventAdapter(getApplicationContext(),eventID,eventName,category,venue,time,date);
                             evListview.setAdapter(adapter);
                         }
 
@@ -108,9 +110,10 @@ public class AllEvents extends AppCompatActivity {
        private final ArrayList category;
        private final ArrayList venue;
        private final ArrayList time;
+       private final ArrayList date;
        Context c;
 
-       MyEventAdapter(Context c, ArrayList eventID, ArrayList eventName, ArrayList category, ArrayList venue, ArrayList time) {
+       MyEventAdapter(Context c, ArrayList eventID, ArrayList eventName, ArrayList category, ArrayList venue, ArrayList time,ArrayList date) {
            super(c, R.layout.event_row, R.id.tvevID, eventID);
            this.c = c;
 
@@ -119,6 +122,8 @@ public class AllEvents extends AppCompatActivity {
            this.category = category;
            this.venue = venue;
            this.time = time;
+           this.date = date;
+
        }
 
 
@@ -133,6 +138,7 @@ public class AllEvents extends AppCompatActivity {
            TextView tvcategory = evrow.findViewById(R.id.tvcategory);
            TextView tvvenue = evrow.findViewById(R.id.tvvenue);
            TextView tvtime = evrow.findViewById(R.id.tvtime);
+           TextView tvdate = evrow.findViewById(R.id.tvdate);
            //ImageView stdPhoto = stdrow.findViewById(R.id.stdPhoto);
 
            tvevID.setText(eventID.get(position).toString());
@@ -140,6 +146,8 @@ public class AllEvents extends AppCompatActivity {
            tvcategory.setText(category.get(position).toString());
            tvvenue.setText(venue.get(position).toString());
            tvtime.setText(time.get(position).toString());
+           tvdate.setText(date.get(position).toString());
+
 
            evrow.setOnClickListener(new View.OnClickListener() {
                @Override

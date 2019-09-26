@@ -32,6 +32,7 @@ public class AddEvent5 extends AppCompatActivity {
         final EditText t3 = findViewById(R.id.eecategory);
         final EditText t4 = findViewById(R.id.evenue);
         final EditText t5 = findViewById(R.id.etime);
+        final EditText t6 = findViewById(R.id.evdate1);
 
         Button btnView = findViewById(R.id.search1);
         Button btnUpdate = findViewById(R.id.update1);
@@ -53,6 +54,7 @@ public class AddEvent5 extends AppCompatActivity {
                             t3.setText(dataSnapshot.child("category").getValue().toString());
                             t4.setText(dataSnapshot.child("venue").getValue().toString());
                             t5.setText(dataSnapshot.child("time").getValue().toString());
+                            t6.setText(dataSnapshot.child("date").getValue().toString());
                             Toast.makeText(getApplicationContext(), "Showing Details", Toast.LENGTH_SHORT).show();
 
 
@@ -87,6 +89,7 @@ public class AddEvent5 extends AppCompatActivity {
                             addEvent.setCategory(t3.getText().toString());
                             addEvent.setVenue(t4.getText().toString());
                             addEvent.setTime(t5.getText().toString());
+                            addEvent.setDate(t6.getText().toString());
 
                             DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("EventDetails").child(t1.getText().toString());
                             dbRef.setValue(addEvent);
@@ -136,7 +139,7 @@ public class AddEvent5 extends AppCompatActivity {
 
 
     public void startnextActivity2(View view) {
-        Intent intent1 = new Intent(AddEvent5.this, AddEvent1.class);
+        Intent intent1 = new Intent(AddEvent5.this, admin_menu.class);
         startActivity(intent1);
     }
 
