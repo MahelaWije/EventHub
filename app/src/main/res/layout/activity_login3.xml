@@ -66,7 +66,7 @@
         app:layout_constraintVertical_bias="0.672" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/ad1"
         android:layout_width="217dp"
         android:layout_height="51dp"
         android:layout_marginStart="8dp"
@@ -79,7 +79,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/ad2"
         android:layout_width="219dp"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
@@ -92,7 +92,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/adbtn1"
         android:layout_width="213dp"
         android:layout_height="49dp"
         android:layout_marginStart="8dp"
@@ -100,7 +100,6 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/round_btn"
-        android:onClick="adminmenu"
         android:text="@string/txt3"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
