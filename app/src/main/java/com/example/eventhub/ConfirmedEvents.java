@@ -30,8 +30,8 @@ public class ConfirmedEvents extends AppCompatActivity {
     ArrayList<String> event;
     ArrayList<String> pkg;
     ArrayList<String> qty;
-    //ArrayList<String> time;
-    //ArrayList<String> photo_link;
+    ArrayList<String> strr8;
+    ArrayList<String> strr9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,8 @@ public class ConfirmedEvents extends AppCompatActivity {
         event= new ArrayList<String>();
         pkg = new ArrayList<String>();
         qty = new ArrayList<String>();
-        //photo_link = new ArrayList<String>();
+        strr8 = new ArrayList<String>();
+        strr9 = new ArrayList<String>();
 
         final ArrayList<String> EvStrList = new ArrayList<>();
         DatabaseReference readRef1 = FirebaseDatabase.getInstance().getReference().child("CustomerEvent");
@@ -62,20 +63,24 @@ public class ConfirmedEvents extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                            String str1, str2, str3, str4;
+                            String str1, str2, str3, str4, str5, str6;
 
                             str1 = dataSnapshot.child("customerID").getValue().toString();
                             str2 = dataSnapshot.child("event").getValue().toString();
                             str3 = dataSnapshot.child("pkg").getValue().toString();
                             str4 = dataSnapshot.child("qty").getValue().toString();
+                            str5 = dataSnapshot.child("contactNo").getValue().toString();
+                            str6 = dataSnapshot.child("cus1email").getValue().toString();
 
                             CustomerID.add(str1);
                             event.add(str2);
                             pkg.add(str3);
                             qty.add(str4);
+                            strr8.add(str5);
+                            strr9.add(str6);
 
 
-                            Mycustomer2Adapter adapter = new Mycustomer2Adapter(getApplicationContext(),CustomerID,event,pkg,qty);
+                            Mycustomer2Adapter adapter = new Mycustomer2Adapter(getApplicationContext(),CustomerID,event,pkg,qty, strr8, strr9);
                             customer2evListview.setAdapter(adapter);
                         }
 
@@ -101,10 +106,13 @@ class Mycustomer2Adapter extends ArrayAdapter<String> {
     private final ArrayList event;
     private final ArrayList pkg;
     private final ArrayList qty;
+    private final ArrayList strr8;
+    private final ArrayList strr9;
+
 
     Context c;
 
-    Mycustomer2Adapter(Context c, ArrayList CustomerID, ArrayList event, ArrayList pkg, ArrayList qty) {
+    Mycustomer2Adapter(Context c, ArrayList CustomerID, ArrayList event, ArrayList pkg, ArrayList qty, ArrayList strr8, ArrayList strr9) {
         super(c, R.layout.confirmevent, R.id.custvevID1, CustomerID);
         this.c = c;
 
@@ -112,6 +120,8 @@ class Mycustomer2Adapter extends ArrayAdapter<String> {
         this.event = event;
         this.pkg = pkg;
         this.qty = qty;
+        this.strr8 = strr8;
+        this.strr9 = strr9;
     }
 
 
@@ -125,6 +135,9 @@ class Mycustomer2Adapter extends ArrayAdapter<String> {
         TextView custvevName = evrow.findViewById(R.id.custvevName1);
         TextView custvcategory = evrow.findViewById(R.id.custvcategory1);
         TextView custvvenue = evrow.findViewById(R.id.custvvenue1);
+        TextView strr89 = evrow.findViewById(R.id.strr8);
+        TextView strr98 = evrow.findViewById(R.id.strr9);
+
 
         //ImageView stdPhoto = stdrow.findViewById(R.id.stdPhoto);
 
@@ -132,6 +145,9 @@ class Mycustomer2Adapter extends ArrayAdapter<String> {
         custvevName.setText(event.get(position).toString());
         custvcategory.setText(pkg.get(position).toString());
         custvvenue.setText(qty.get(position).toString());
+        strr89.setText(strr8.get(position).toString());
+        strr98.setText(strr9.get(position).toString());
+
 
 
         /*evrow.setOnClickListener(new View.OnClickListener() {

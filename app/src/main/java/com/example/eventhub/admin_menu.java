@@ -31,4 +31,9 @@ public class admin_menu extends AppCompatActivity {
         Intent intent1 = new Intent(admin_menu.this,ConfirmedEvents.class);
         startActivity(intent1);
     }
+
+    public void  userhandling01(View view) {
+        Intent intent1 = new Intent(admin_menu.this,UserRegList.class);
+        startActivity(intent1);
+    }
 }

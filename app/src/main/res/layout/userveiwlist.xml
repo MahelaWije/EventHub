@@ -28,25 +28,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/cusid"
+            android:text="@string/txt4"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/Evnt"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/pkg"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/text21"
+            android:text="@string/txt6"
             android:textStyle="bold" />
 
         <TextView
@@ -58,9 +46,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/txt6"
+            android:text="@string/txt5"
             android:textStyle="bold" />
-
 
 
 
@@ -68,51 +55,36 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="190dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/custvevID1"
+            android:id="@+id/tvevID12"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="-" />
 
         <TextView
-            android:id="@+id/custvevName1"
+            android:id="@+id/tvevName12"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="-" />
 
         <TextView
-            android:id="@+id/custvcategory1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/tvcno12"
+            android:layout_width="181dp"
+            android:layout_height="wrap_content"
             android:text="-" />
 
         <TextView
-            android:id="@+id/custvvenue1"
+            android:id="@+id/tvpwd12"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="-" />
-
-        <TextView
-            android:id="@+id/strr8"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="-" />
-
-        <TextView
-            android:id="@+id/strr9"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="-" />
-
-
 
 
     </LinearLayout>
 
 
 </LinearLayout>
-

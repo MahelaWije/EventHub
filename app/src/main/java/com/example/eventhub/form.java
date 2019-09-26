@@ -6,6 +6,8 @@ public class form {
     private String event;
     private String pkg;
     private String qty;
+    private String contactNo;
+    private String cus1email;
 
     public form() {
 
@@ -41,6 +43,22 @@ public class form {
 
     public void setQty(String qty) {
         this.qty = qty;
+    }
+
+    public String getContactNo() {
+        return contactNo;
+    }
+
+    public void setContactNo(String contactNo) {
+        this.contactNo = contactNo;
+    }
+
+    public String getCus1email() {
+        return cus1email;
+    }
+
+    public void setCus1email(String cus1email) {
+        this.cus1email = cus1email;
     }
 }
 

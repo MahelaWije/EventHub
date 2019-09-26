@@ -18,7 +18,7 @@ import static android.text.TextUtils.isEmpty;
 public class customer_form01 extends AppCompatActivity {
 
     Button proceed;
-    EditText cusid, event, pkg, qty;
+    EditText cusid, event, pkg, qty, cno, custemail;
 
 
     @Override
@@ -38,6 +38,8 @@ public class customer_form01 extends AppCompatActivity {
         event = findViewById(R.id.event);
         pkg = findViewById(R.id.pkg);
         qty = findViewById(R.id.qty);
+        cno = findViewById(R.id.strr1);
+        custemail = findViewById(R.id.strr2);
 
 
 
@@ -63,11 +65,11 @@ public class customer_form01 extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Please enter event category", Toast.LENGTH_LONG).show();
                     else if (isEmpty((qty.getText().toString())))
                         Toast.makeText(getApplicationContext(), "Please enter event venue", Toast.LENGTH_LONG).show();
-                /*else if (isEmpty((txtcontact.getText().toString())))
+                    else if (isEmpty((cno.getText().toString())))
                     Toast.makeText(getApplicationContext(), "Please enter your contact number", Toast.LENGTH_LONG).show();
-                else if (isEmpty((txtcheckin.getText().toString())))
-                    Toast.makeText(getApplicationContext(), "Please enter your Check-In date", Toast.LENGTH_LONG).show();
-                else if (isEmpty((txtcheckout.getText().toString())))
+                    else if (isEmpty((custemail.getText().toString())))
+                    Toast.makeText(getApplicationContext(), "Please enter your email", Toast.LENGTH_LONG).show();
+                /*else if (isEmpty((txtcheckout.getText().toString())))
                     Toast.makeText(getApplicationContext(), "Please enter your Check-Out date", Toast.LENGTH_LONG).show();*/
                     else {
 
@@ -76,6 +78,8 @@ public class customer_form01 extends AppCompatActivity {
                         form01.setEvent(event.getText().toString().trim());
                         form01.setPkg(pkg.getText().toString().trim());
                         form01.setQty(qty.getText().toString().trim());
+                        form01.setContactNo(cno.getText().toString().trim());
+                        form01.setCus1email(custemail.getText().toString().trim());
                     /*addEvent2.setCheckout(txtcheckout.getText().toString().trim());
                     addEvent2.setFullName(txtname.getText().toString().trim());
                     addEvent2.setAddress(txtaddress.getText().toString().trim());
@@ -115,6 +119,8 @@ public class customer_form01 extends AppCompatActivity {
                 event.setText("");
                 pkg.setText("");
                 qty.setText("");
+                cno.setText("");
+                custemail.setText("");
                     /*txtcontact.setText("");
                     txtnic.setText("");
                     txtrooms.setText("");*/

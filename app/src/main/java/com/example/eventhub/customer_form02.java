@@ -28,7 +28,8 @@ public class customer_form02 extends AppCompatActivity {
         final EditText t2 = findViewById(R.id.event);
         final EditText t3 = findViewById(R.id.pkg);
         final EditText t4 = findViewById(R.id.qty);
-        //final EditText t5 = findViewById(R.id.EdayID);
+        final EditText t5 = findViewById(R.id.strr5);
+        final EditText t6 = findViewById(R.id.strr6);
 
         Button btnView = findViewById(R.id.search1);
         Button btnUpdate = findViewById(R.id.update1);
@@ -49,7 +50,8 @@ public class customer_form02 extends AppCompatActivity {
                             t2.setText(dataSnapshot.child("event").getValue().toString());
                             t3.setText(dataSnapshot.child("pkg").getValue().toString());
                             t4.setText(dataSnapshot.child("qty").getValue().toString());
-                            //t5.setText(dataSnapshot.child("exday").getValue().toString());
+                            t5.setText(dataSnapshot.child("contactNo").getValue().toString());
+                            t6.setText(dataSnapshot.child("cus1email").getValue().toString());
                             Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
 
 
@@ -83,7 +85,8 @@ public class customer_form02 extends AppCompatActivity {
                             form02.setEvent(t2.getText().toString());
                             form02.setPkg(t3.getText().toString());
                             form02.setQty(t4.getText().toString());
-                            //ft.setExday(t5.getText().toString());
+                            form02.setContactNo(t5.getText().toString());
+                            form02.setCus1email(t6.getText().toString());
 
                             DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("CustomerEvent").child(t1.getText().toString());
                             dbRef.setValue(form02);

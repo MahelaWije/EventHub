@@ -76,6 +76,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/round_btn"
+        android:onClick="userhandling01"
         android:text="@string/usrhndl"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
