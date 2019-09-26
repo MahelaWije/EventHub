@@ -26,6 +26,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.045" />
 
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="184dp"
@@ -40,11 +41,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.159" />
-
+        app:layout_constraintVertical_bias="0.129" />
 
     <TextView
         android:id="@+id/textView4"
@@ -184,6 +184,8 @@
         android:layout_height="39dp"
         android:background="@drawable/round_btn"
         android:text="@string/btn9"
+        android:textColor="@android:color/background_light"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.732"
@@ -197,6 +199,8 @@
         android:layout_height="49dp"
         android:background="@drawable/round_btn"
         android:text="@string/btn7"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
@@ -208,8 +212,10 @@
         android:id="@+id/paydel"
         android:layout_width="308dp"
         android:layout_height="49dp"
-        android:background="@drawable/round_btn"
+        android:background="@drawable/loginbtn"
         android:text="@string/btnPdelete"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
@@ -221,10 +227,13 @@
         android:id="@+id/button7"
         android:layout_width="308dp"
         android:layout_height="49dp"
-        android:layout_marginStart="52dp"
         android:background="@drawable/round_btn"
+        android:onClick="payment22"
         android:text="back"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.956" />
