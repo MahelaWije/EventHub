@@ -16,6 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import static android.text.TextUtils.isEmpty;
+
 public class AddEvent5 extends AppCompatActivity {
 
     @Override
@@ -84,21 +86,42 @@ public class AddEvent5 extends AppCompatActivity {
 
                         if(dataSnapshot.hasChild(t1.getText().toString())){
 
-                            addEvent.setEventID(t1.getText().toString());
-                            addEvent.setEventName(t2.getText().toString());
-                            addEvent.setCategory(t3.getText().toString());
-                            addEvent.setVenue(t4.getText().toString());
-                            addEvent.setTime(t5.getText().toString());
-                            addEvent.setDate(t6.getText().toString());
 
-                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("EventDetails").child(t1.getText().toString());
-                            dbRef.setValue(addEvent);
+                            try {
+                                if (isEmpty(t1.getText().toString()))
+                                    Toast.makeText(getApplicationContext(), "Please enter event ID", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t2.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter event name", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t3.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter event category", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t4.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter event venue", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t6.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter event date", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t5.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter event time", Toast.LENGTH_LONG).show();
+                                else {
 
-                            Toast.makeText(getApplicationContext(),"Data Update Successfully!",Toast.LENGTH_SHORT).show();
-                        }
-                        else{
+                                    addEvent.setEventID(t1.getText().toString());
+                                    addEvent.setEventName(t2.getText().toString());
+                                    addEvent.setCategory(t3.getText().toString());
+                                    addEvent.setVenue(t4.getText().toString());
+                                    addEvent.setTime(t5.getText().toString());
+                                    addEvent.setDate(t6.getText().toString());
+
+                                    DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("EventDetails").child(t1.getText().toString());
+                                    dbRef.setValue(addEvent);
+
+                                    Toast.makeText(getApplicationContext(), "Data Update Successfully!", Toast.LENGTH_SHORT).show();
+                                }
+                            } catch (Exception e1) {
+                                Toast.makeText(getApplicationContext(), "Error" + e1, Toast.LENGTH_LONG).show();
+                            }
+                        } else  {
                             Toast.makeText(getApplicationContext(),"No details to update ",Toast.LENGTH_SHORT).show();
                         }
+
+
                     }
 
                     @Override

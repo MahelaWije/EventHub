@@ -15,7 +15,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.regex.Pattern;
+
+import static android.text.TextUtils.isEmpty;
+
 public class customer_form02 extends AppCompatActivity {
+
+    private boolean inValidNumber(String custphone) {
+        if (!Pattern.matches("[a-zA-Z]", custphone)) {
+            return custphone.length() != 10;
+        }
+        return false;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,20 +91,44 @@ public class customer_form02 extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         form form02 = new form();
 
-                        if(dataSnapshot.hasChild(t1.getText().toString())){
+                        if(dataSnapshot.hasChild(t1.getText().toString())) {
 
-                            form02.setCustomerID(t1.getText().toString());
-                            form02.setEvent(t2.getText().toString());
-                            form02.setPkg(t3.getText().toString());
-                            form02.setQty(t4.getText().toString());
-                            form02.setContactNo(t5.getText().toString());
-                            form02.setCus1email(t6.getText().toString());
+                            try {
+                                if (isEmpty(t1.getText().toString()))
+                                    Toast.makeText(getApplicationContext(), "Please enter event ID", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t2.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter event name", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t3.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter event category", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t4.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter event venue", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t5.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter your contact number", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t6.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter your email", Toast.LENGTH_LONG).show();
+                                else if (inValidNumber(t6.getText().toString()))
+                                    Toast.makeText(getApplicationContext(), "Please enter a valid Number", Toast.LENGTH_LONG).show();
+                /*else if (isEmpty((txtcheckout.getText().toString())))
+                    Toast.makeText(getApplicationContext(), "Please enter your Check-Out date", Toast.LENGTH_LONG).show();*/
+                                else {
 
-                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("CustomerEvent").child(t1.getText().toString());
-                            dbRef.setValue(form02);
+                                    form02.setCustomerID(t1.getText().toString());
+                                    form02.setEvent(t2.getText().toString());
+                                    form02.setPkg(t3.getText().toString());
+                                    form02.setQty(t4.getText().toString());
+                                    form02.setContactNo(t5.getText().toString());
+                                    form02.setCus1email(t6.getText().toString());
 
-                            Toast.makeText(getApplicationContext(),"Data Update Successfully!",Toast.LENGTH_SHORT).show();
+                                    DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("CustomerEvent").child(t1.getText().toString());
+                                    dbRef.setValue(form02);
+
+                                    Toast.makeText(getApplicationContext(), "Data Update Successfully!", Toast.LENGTH_SHORT).show();
+                                }
+                            } catch (Exception e1) {
+                                Toast.makeText(getApplicationContext(), "Error" + e1, Toast.LENGTH_LONG).show();
+                            }
                         }
+
                         else{
                             Toast.makeText(getApplicationContext(),"No sourse to update ",Toast.LENGTH_SHORT).show();
                         }

@@ -13,12 +13,21 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.regex.Pattern;
+
 import static android.text.TextUtils.isEmpty;
 
 public class customer_form01 extends AppCompatActivity {
 
     Button proceed;
     EditText cusid, event, pkg, qty, cno, custemail;
+
+    private boolean inValidNumber(String cno) {
+        if (!Pattern.matches("[a-zA-Z]", cno)) {
+            return cno.length() != 10;
+        }
+        return false;
+    }
 
 
     @Override
@@ -69,6 +78,8 @@ public class customer_form01 extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please enter your contact number", Toast.LENGTH_LONG).show();
                     else if (isEmpty((custemail.getText().toString())))
                     Toast.makeText(getApplicationContext(), "Please enter your email", Toast.LENGTH_LONG).show();
+                    else if (inValidNumber(cno.getText().toString()))
+                        Toast.makeText(getApplicationContext(), "Please enter a valid Number", Toast.LENGTH_LONG).show();
                 /*else if (isEmpty((txtcheckout.getText().toString())))
                     Toast.makeText(getApplicationContext(), "Please enter your Check-Out date", Toast.LENGTH_LONG).show();*/
                     else {

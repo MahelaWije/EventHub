@@ -16,6 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import static android.text.TextUtils.isEmpty;
+
 public class AddPackage5 extends AppCompatActivity {
 
     @Override
@@ -81,20 +83,40 @@ public class AddPackage5 extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         AddPack addPack = new AddPack();
 
-                        if(dataSnapshot.hasChild(t1.getText().toString())){
+                        if(dataSnapshot.hasChild(t1.getText().toString())) {
 
-                            addPack.setPackageID(t1.getText().toString());
-                            addPack.setPackageName(t2.getText().toString());
-                            addPack.setCategory(t3.getText().toString());
-                            addPack.setTicketPrice(t4.getText().toString());
-                            addPack.setOffers(t5.getText().toString());
+                            try {
+                                if (isEmpty(t1.getText().toString()))
+                                    Toast.makeText(getApplicationContext(), "Please enter package ID", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t2.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter package name", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t3.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter package category", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t4.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter Ticket Price", Toast.LENGTH_LONG).show();
+                                else if (isEmpty((t5.getText().toString())))
+                                    Toast.makeText(getApplicationContext(), "Please enter Offers", Toast.LENGTH_LONG).show();
+                /*else if (isEmpty((txtcheckin.getText().toString())))
+                    Toast.makeText(getApplicationContext(), "Please enter your Check-In date", Toast.LENGTH_LONG).show();
+                else if (isEmpty((txtcheckout.getText().toString())))
+                    Toast.makeText(getApplicationContext(), "Please enter your Check-Out date", Toast.LENGTH_LONG).show();*/
+                                else {
 
-                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("PackageDetails").child(t1.getText().toString());
-                            dbRef.setValue(addPack);
+                                    addPack.setPackageID(t1.getText().toString());
+                                    addPack.setPackageName(t2.getText().toString());
+                                    addPack.setCategory(t3.getText().toString());
+                                    addPack.setTicketPrice(t4.getText().toString());
+                                    addPack.setOffers(t5.getText().toString());
 
-                            Toast.makeText(getApplicationContext(),"Data Update Successfully!",Toast.LENGTH_SHORT).show();
-                        }
-                        else{
+                                    DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("PackageDetails").child(t1.getText().toString());
+                                    dbRef.setValue(addPack);
+
+                                    Toast.makeText(getApplicationContext(), "Data Update Successfully!", Toast.LENGTH_SHORT).show();
+                                }
+                            } catch (Exception e1) {
+                                Toast.makeText(getApplicationContext(), "Error" + e1, Toast.LENGTH_LONG).show();
+                            }
+                        }else{
                             Toast.makeText(getApplicationContext(),"No sourse to update ",Toast.LENGTH_SHORT).show();
                         }
                     }

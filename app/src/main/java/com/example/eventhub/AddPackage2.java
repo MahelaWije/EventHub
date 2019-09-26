@@ -46,15 +46,15 @@ public class AddPackage2 extends AppCompatActivity {
                 DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("PackageDetails");
                 try {
                     if (isEmpty(pid.getText().toString()))
-                        Toast.makeText(getApplicationContext(), "Please enter event ID", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Please enter package ID", Toast.LENGTH_LONG).show();
                     else if (isEmpty((pname.getText().toString())))
-                        Toast.makeText(getApplicationContext(), "Please enter event name", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Please enter package name", Toast.LENGTH_LONG).show();
                     else if (isEmpty((pcategory2.getText().toString())))
-                        Toast.makeText(getApplicationContext(), "Please enter event category", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Please enter package category", Toast.LENGTH_LONG).show();
                     else if (isEmpty((pticket.getText().toString())))
-                        Toast.makeText(getApplicationContext(), "Please enter event venue", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Please enter Ticket Price", Toast.LENGTH_LONG).show();
                     else if (isEmpty((poffers.getText().toString())))
-                    Toast.makeText(getApplicationContext(), "Please enter your contact number", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Please enter Offers", Toast.LENGTH_LONG).show();
                 /*else if (isEmpty((txtcheckin.getText().toString())))
                     Toast.makeText(getApplicationContext(), "Please enter your Check-In date", Toast.LENGTH_LONG).show();
                 else if (isEmpty((txtcheckout.getText().toString())))
