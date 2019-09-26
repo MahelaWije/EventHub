@@ -28,7 +28,6 @@ public class AddEvent5 extends AppCompatActivity {
         Intent intent = getIntent();
         String id = intent.getStringExtra("eventID");
 
-
         final EditText t1 = findViewById(R.id.eid);
         final EditText t2 = findViewById(R.id.ename);
         final EditText t3 = findViewById(R.id.eecategory);
@@ -39,10 +38,9 @@ public class AddEvent5 extends AppCompatActivity {
         Button btnView = findViewById(R.id.search1);
         Button btnUpdate = findViewById(R.id.update1);
         Button btnDelete = findViewById(R.id.delete1);
-
         t1.setText(id);
-        //Search Method//
 
+        //Search Method//
         btnView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,23 +56,18 @@ public class AddEvent5 extends AppCompatActivity {
                             t5.setText(dataSnapshot.child("time").getValue().toString());
                             t6.setText(dataSnapshot.child("date").getValue().toString());
                             Toast.makeText(getApplicationContext(), "Showing Details", Toast.LENGTH_SHORT).show();
-
-
                         } else {
                             Toast.makeText(getApplicationContext(), "No details to display", Toast.LENGTH_SHORT).show();
                         }
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-
                     }
                 });
-
             }
         });
 
         //Update Method
-
        btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,10 +76,7 @@ public class AddEvent5 extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         AddEvent addEvent = new AddEvent();
-
                         if(dataSnapshot.hasChild(t1.getText().toString())){
-
-
                             try {
                                 if (isEmpty(t1.getText().toString()))
                                     Toast.makeText(getApplicationContext(), "Please enter event ID", Toast.LENGTH_LONG).show();
@@ -101,37 +91,27 @@ public class AddEvent5 extends AppCompatActivity {
                                 else if (isEmpty((t5.getText().toString())))
                                     Toast.makeText(getApplicationContext(), "Please enter event time", Toast.LENGTH_LONG).show();
                                 else {
-
                                     addEvent.setEventID(t1.getText().toString());
                                     addEvent.setEventName(t2.getText().toString());
                                     addEvent.setCategory(t3.getText().toString());
                                     addEvent.setVenue(t4.getText().toString());
                                     addEvent.setTime(t5.getText().toString());
                                     addEvent.setDate(t6.getText().toString());
-
                                     DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("EventDetails").child(t1.getText().toString());
                                     dbRef.setValue(addEvent);
-
-                                    Toast.makeText(getApplicationContext(), "Data Update Successfully!", Toast.LENGTH_SHORT).show();
-                                }
+                                    Toast.makeText(getApplicationContext(), "Data Update Successfully!", Toast.LENGTH_SHORT).show(); }
                             } catch (Exception e1) {
-                                Toast.makeText(getApplicationContext(), "Error" + e1, Toast.LENGTH_LONG).show();
-                            }
+                                Toast.makeText(getApplicationContext(), "Error" + e1, Toast.LENGTH_LONG).show(); }
                         } else  {
                             Toast.makeText(getApplicationContext(),"No details to update ",Toast.LENGTH_SHORT).show();
                         }
-
-
                     }
-
                     @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
+                    public void onCancelled(@NonNull DatabaseError databaseError) {}
                 });
-            }
-        });
+            }});
 
+        //delete
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -152,7 +132,6 @@ public class AddEvent5 extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-
                     }
                 });
             }

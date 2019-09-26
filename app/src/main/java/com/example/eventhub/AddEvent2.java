@@ -46,12 +46,10 @@ public class AddEvent2 extends AppCompatActivity {
         add = (Button) findViewById(R.id.add);
 
         add.setOnClickListener(new View.OnClickListener() {
-
             AddEvent addEvent = new AddEvent();
 
             @Override
             public void onClick(View view) {
-
                 DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("EventDetails");
                 try {
                     if (isEmpty(eid.getText().toString()))
@@ -66,46 +64,17 @@ public class AddEvent2 extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Please enter event date", Toast.LENGTH_LONG).show();
                     else if (isEmpty((etime.getText().toString())))
                     Toast.makeText(getApplicationContext(), "Please enter event time", Toast.LENGTH_LONG).show();
-                /*else if (isEmpty((txtcheckin.getText().toString())))
-                    Toast.makeText(getApplicationContext(), "Please enter your Check-In date", Toast.LENGTH_LONG).show();
-                else if (isEmpty((txtcheckout.getText().toString())))
-                    Toast.makeText(getApplicationContext(), "Please enter your Check-Out date", Toast.LENGTH_LONG).show();*/
                     else {
-
-
                         addEvent.setEventID(eid.getText().toString().trim());
                         addEvent.setEventName(ename.getText().toString().trim());
                         addEvent.setCategory(eecategory.getText().toString().trim());
                         addEvent.setVenue(evenue.getText().toString().trim());
                         addEvent.setDate(evdate.getText().toString().trim());
                         addEvent.setTime(etime.getText().toString().trim());
-                    /*addEvent2.setFullName(txtname.getText().toString().trim());
-                    addEvent2.setAddress(txtaddress.getText().toString().trim());
-
-                    try{
-                        addEvent2.setContactnumber(Integer.parseInt(txtcontact.getText().toString().trim()));
-                    }catch (NumberFormatException ex1){
-                        Toast.makeText(getApplicationContext(), "Invalid Contact Number", Toast.LENGTH_LONG).show();
-                    }
-
-                    try{
-                        makereservation.setRooms(Integer.parseInt(txtrooms.getText().toString().trim()));
-                    }catch(NumberFormatException e2){
-                        Toast.makeText(getApplicationContext(), "Invalid Room Type", Toast.LENGTH_LONG).show();
-                    }*/
-
-
                         dbRef.child(addEvent.getEventID()).setValue(addEvent);
-
                         Toast.makeText(getApplicationContext(), "Data Saved Successfully", Toast.LENGTH_LONG).show();
                         clearControls();
-
-                        //Intent i = new Intent(getApplicationContext(), makereservation4.class);
-                        //startActivity(i);
                     }
-
-                    //});
-
                 } catch (Exception e1) {
                     Toast.makeText(getApplicationContext(), "Error" + e1, Toast.LENGTH_LONG).show();
                 }
@@ -119,14 +88,9 @@ public class AddEvent2 extends AppCompatActivity {
                 evenue.setText("");
                 evdate.setText("");
                 etime.setText("");
-                    /*txtcontact.setText("");
-                    txtnic.setText("");
-                    txtrooms.setText("");*/
             }
 });
         }
-       //}*/
-
 
 
             public void startnextActivity2(View view) {

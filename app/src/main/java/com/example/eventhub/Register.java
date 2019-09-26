@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static android.text.TextUtils.isEmpty;
@@ -29,6 +30,14 @@ public class Register extends AppCompatActivity {
         return false;
     }
 
+    private boolean validateEmailAddress(String custemail){
+        String  expression="^[\\w\\-]([\\.\\w])+[\\w]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+        CharSequence inputStr = custemail;
+        Pattern pattern = Pattern.compile(expression,Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(inputStr);
+        return matcher.matches();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,9 +47,6 @@ public class Register extends AppCompatActivity {
         custemail = findViewById(R.id.custemail);
         custphone = findViewById(R.id.custphone);
         custpwd = findViewById(R.id.custpwd);
-
-
-
 
         reg = (Button) findViewById(R.id.reg);
 
@@ -63,33 +69,15 @@ public class Register extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Please enter Password", Toast.LENGTH_LONG).show();
                     else if (inValidNumber(custphone.getText().toString()))
                     Toast.makeText(getApplicationContext(), "Please enter a valid Number", Toast.LENGTH_LONG).show();
+                    else if (!validateEmailAddress(custemail.getText().toString()))
+                        Toast.makeText(getApplicationContext(), "Please enter a valid Email", Toast.LENGTH_LONG).show();
 
-                /*else if (isEmpty((txtcheckin.getText().toString())))
-                    Toast.makeText(getApplicationContext(), "Please enter your Check-In date", Toast.LENGTH_LONG).show();
-                else if (isEmpty((txtcheckout.getText().toString())))
-                    Toast.makeText(getApplicationContext(), "Please enter your Check-Out date", Toast.LENGTH_LONG).show();*/
                     else {
-
 
                         userReg.setCustomerID(custid.getText().toString().trim());
                         userReg.setEmail(custemail.getText().toString().trim());
                         userReg.setContactNum(custphone.getText().toString().trim());
                         userReg.setPassword(custpwd.getText().toString().trim());
-
-                    /*addEvent2.setFullName(txtname.getText().toString().trim());
-                    addEvent2.setAddress(txtaddress.getText().toString().trim());
-
-                    try{
-                        addEvent2.setContactnumber(Integer.parseInt(txtcontact.getText().toString().trim()));
-                    }catch (NumberFormatException ex1){
-                        Toast.makeText(getApplicationContext(), "Invalid Contact Number", Toast.LENGTH_LONG).show();
-                    }
-
-                    try{
-                        makereservation.setRooms(Integer.parseInt(txtrooms.getText().toString().trim()));
-                    }catch(NumberFormatException e2){
-                        Toast.makeText(getApplicationContext(), "Invalid Room Type", Toast.LENGTH_LONG).show();
-                    }*/
 
 
                         dbRef.child(userReg.getCustomerID01()).setValue(userReg);
@@ -97,11 +85,8 @@ public class Register extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_LONG).show();
                         clearControls();
 
-                        //Intent i = new Intent(getApplicationContext(), makereservation4.class);
-                        //startActivity(i);
                     }
 
-                    //});
 
                 } catch (Exception e1) {
                     Toast.makeText(getApplicationContext(), "Error" + e1, Toast.LENGTH_LONG).show();
@@ -115,9 +100,7 @@ public class Register extends AppCompatActivity {
                 custphone.setText("");
                 custpwd.setText("");
 
-                    /*txtcontact.setText("");
-                    txtnic.setText("");
-                    txtrooms.setText("");*/
+
             }
         });
     }

@@ -88,21 +88,15 @@ public class AllEvents extends AppCompatActivity {
                         }
 
                         @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
+                        public void onCancelled(@NonNull DatabaseError databaseError) { }
                     });
                 }
-
             }
-
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
+            public void onCancelled(@NonNull DatabaseError databaseError) { }
         });
-
-    } }
+    }
+}
 
    class MyEventAdapter extends ArrayAdapter<String> {
        private final ArrayList eventID;
@@ -123,10 +117,7 @@ public class AllEvents extends AppCompatActivity {
            this.venue = venue;
            this.time = time;
            this.date = date;
-
        }
-
-
        @NonNull @Override
 
     public View getView(final int position, @Nullable final View convertView, @NonNull ViewGroup parent) {
@@ -139,7 +130,6 @@ public class AllEvents extends AppCompatActivity {
            TextView tvvenue = evrow.findViewById(R.id.tvvenue);
            TextView tvtime = evrow.findViewById(R.id.tvtime);
            TextView tvdate = evrow.findViewById(R.id.tvdate);
-           //ImageView stdPhoto = stdrow.findViewById(R.id.stdPhoto);
 
            tvevID.setText(eventID.get(position).toString());
            tvevName.setText(eventName.get(position).toString());
@@ -147,7 +137,6 @@ public class AllEvents extends AppCompatActivity {
            tvvenue.setText(venue.get(position).toString());
            tvtime.setText(time.get(position).toString());
            tvdate.setText(date.get(position).toString());
-
 
            evrow.setOnClickListener(new View.OnClickListener() {
                @Override
@@ -158,17 +147,10 @@ public class AllEvents extends AppCompatActivity {
                    view.getContext().startActivity(intent);
                }
            });
-
            return evrow;
-
        }
 }
-           //Photo add to imageview here
-       /* Glide.with(context)
-                .load(photo_link.get(position).toString())
-                .into(stdPhoto);
-        return stdrow;
-    }*/
+
 
 
 

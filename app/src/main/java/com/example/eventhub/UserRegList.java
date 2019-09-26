@@ -128,15 +128,6 @@ class MyEventAdapter2 extends ArrayAdapter<String> {
         tvcno12.setText(contactnum.get(position).toString());
         tvpwd12.setText(pwd.get(position).toString());
 
-        /*evrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), AddEvent5.class);
-                intent.putExtra("eventID", eventID.get(position).toString());
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                view.getContext().startActivity(intent);
-            }
-        });*/
 
         return userrow;
 

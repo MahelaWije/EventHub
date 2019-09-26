@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static android.text.TextUtils.isEmpty;
@@ -26,6 +27,14 @@ public class customer_form02 extends AppCompatActivity {
             return custphone.length() != 10;
         }
         return false;
+    }
+
+    private boolean validateEmailAddress(String custemail){
+        String  expression="^[\\w\\-]([\\.\\w])+[\\w]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+        CharSequence inputStr = custemail;
+        Pattern pattern = Pattern.compile(expression,Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(inputStr);
+        return matcher.matches();
     }
 
 
@@ -108,6 +117,8 @@ public class customer_form02 extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), "Please enter your email", Toast.LENGTH_LONG).show();
                                 else if (inValidNumber(t6.getText().toString()))
                                     Toast.makeText(getApplicationContext(), "Please enter a valid Number", Toast.LENGTH_LONG).show();
+                                else if (!validateEmailAddress(t6.getText().toString()))
+                                    Toast.makeText(getApplicationContext(), "Please enter a valid Email", Toast.LENGTH_LONG).show();
                 /*else if (isEmpty((txtcheckout.getText().toString())))
                     Toast.makeText(getApplicationContext(), "Please enter your Check-Out date", Toast.LENGTH_LONG).show();*/
                                 else {
