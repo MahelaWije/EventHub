@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="216dp"
-        android:layout_height="176dp"
+        android:layout_width="169dp"
+        android:layout_height="161dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -24,43 +24,40 @@
 
     <TextView
         android:id="@+id/textView22"
-        android:layout_width="155dp"
-        android:layout_height="50dp"
+        android:layout_width="154dp"
+        android:layout_height="53dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/txt4"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469" />
+        app:layout_constraintVertical_bias="0.421" />
 
     <TextView
         android:id="@+id/textView23"
         android:layout_width="136dp"
         android:layout_height="43dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/txt6"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589" />
+        app:layout_constraintVertical_bias="0.529" />
 
     <TextView
         android:id="@+id/textView24"
@@ -71,9 +68,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/txt5"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,7 +80,7 @@
         app:layout_constraintVertical_bias="0.726" />
 
     <EditText
-        android:id="@+id/editText15"
+        android:id="@+id/custid"
         android:layout_width="220dp"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
@@ -96,7 +93,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText16"
+        android:id="@+id/custemail"
         android:layout_width="220dp"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
@@ -109,7 +106,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText17"
+        android:id="@+id/custpwd"
         android:layout_width="220dp"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
@@ -122,7 +119,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button15"
+        android:id="@+id/reg"
         android:layout_width="278dp"
         android:layout_height="56dp"
         android:layout_marginStart="8dp"
@@ -140,4 +137,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.911" />
+
+    <TextView
+        android:id="@+id/textView62"
+        android:layout_width="144dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Contact No :"
+        android:textAlignment="viewStart"
+        android:textColor="@color/btclr"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.031"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.625" />
+
+    <EditText
+        android:id="@+id/custphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView62"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.614" />
 </androidx.constraintlayout.widget.ConstraintLayout>
