@@ -25,18 +25,16 @@ public class updateCard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_card);
 
-
         final EditText t1 = findViewById(R.id.payunum);
         final EditText t2 = findViewById(R.id.payuu);
         final EditText t3 = findViewById(R.id.payucvv);
         final EditText t4 = findViewById(R.id.paypp);
-        //final EditText t5 = findViewById(R.id.EdayID);
 
         Button btnView = findViewById(R.id.payupsearch);
         Button btnUpdate = findViewById(R.id.payupdate);
         Button btnDelete = findViewById(R.id.paydel);
 
-        //search Method//
+        //SEARCH
 
         btnView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,13 +45,12 @@ public class updateCard extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                         if (dataSnapshot.hasChildren()) {
-                            //t1.setText(dataSnapshot.child("paynum").getValue().toString());
+
                             t2.setText(dataSnapshot.child("payname").getValue().toString());
                             t3.setText(dataSnapshot.child("paycvv").getValue().toString());
                             t4.setText(dataSnapshot.child("payexd").getValue().toString());
-                            //t5.setText(dataSnapshot.child("exday").getValue().toString());
-                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
 
+                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
 
                         } else {
                             Toast.makeText(getApplicationContext(), "No source to display", Toast.LENGTH_SHORT).show();
@@ -64,11 +61,10 @@ public class updateCard extends AppCompatActivity {
 
                     }
                 });
-
             }
         });
 
-        //Update Method
+        //UPDATE METHOD
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +76,6 @@ public class updateCard extends AppCompatActivity {
                         payy c = new payy();
 
                         if(dataSnapshot.hasChild(t1.getText().toString())) {
-
 
                             try {
                                 if (isEmpty(t1.getText().toString()))
@@ -97,7 +92,7 @@ public class updateCard extends AppCompatActivity {
                                     c.setPayname(t2.getText().toString());
                                     c.setPaycvv(t3.getText().toString());
                                     c.setPayexd(t4.getText().toString());
-                                    //ft.setExday(t5.getText().toString());
+
 
                                     DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("payment").child(t1.getText().toString());
                                     dbRef.setValue(c);
@@ -120,7 +115,7 @@ public class updateCard extends AppCompatActivity {
             }
         });
 
-        //delete
+        //DELETE
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -138,7 +133,6 @@ public class updateCard extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"No Source to delete!",Toast.LENGTH_SHORT).show();
                         }
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -146,7 +140,6 @@ public class updateCard extends AppCompatActivity {
                 });
             }
         });
-
     }
 
     public void payment22(View view){
