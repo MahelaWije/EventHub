@@ -25,5 +25,9 @@ public class customer_crud extends AppCompatActivity {
         startActivity(intent1);
     }
 
+    public void  payc(View view) {
+        Intent intent1 = new Intent(customer_crud.this,updateCard.class);
+        startActivity(intent1);
+    }
 
 }

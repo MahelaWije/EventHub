@@ -146,4 +146,9 @@ public class updateCard extends AppCompatActivity {
         Intent intent0001 = new Intent(updateCard.this, purchase.class);
         startActivity(intent0001);
     }
+
+    public void paymen(View view){
+        Intent intent0001 = new Intent(updateCard.this, Success.class);
+        startActivity(intent0001);
+    }
 }

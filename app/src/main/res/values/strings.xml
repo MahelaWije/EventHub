@@ -170,7 +170,7 @@
     <string name="butnpay">PAY</string>
     <string name="txtsubmit">SUBMIT</string>
     <string name="textupdate">Update Payment</string>
-    <string name="textup02"> Update details here</string>
+    <string name="textup02"> Update details here or search for existing card</string>
     <string name="txtsvaechangs">Save Changes</string>
     <string name="textpayconfirm">Payment Confirmation</string>
     <string name="textbnspay">BnS Live In Concert</string>
