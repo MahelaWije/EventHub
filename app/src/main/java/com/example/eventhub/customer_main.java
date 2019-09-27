@@ -18,4 +18,9 @@ public class customer_main extends AppCompatActivity {
         Intent intent1 = new Intent(customer_main.this,CustomerEventList.class);
         startActivity(intent1);
     }
+
+    public void  xxxx(View view) {
+        Intent intent1 = new Intent(customer_main.this,Login1.class);
+        startActivity(intent1);
+    }
 }

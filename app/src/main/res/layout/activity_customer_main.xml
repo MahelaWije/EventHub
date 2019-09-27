@@ -37,6 +37,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/loginbtn"
+        android:onClick="xxxx"
         android:text="@string/btn8"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"

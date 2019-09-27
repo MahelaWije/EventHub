@@ -31,7 +31,6 @@ public class CustomerEventList extends AppCompatActivity {
     ArrayList<String> category;
     ArrayList<String> venue;
     ArrayList<String> time;
-    //ArrayList<String> photo_link;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +45,7 @@ public class CustomerEventList extends AppCompatActivity {
         category = new ArrayList<String>();
         venue = new ArrayList<String>();
         time = new ArrayList<String>();
-        //photo_link = new ArrayList<String>();
+
 
         final ArrayList<String> EvStrList = new ArrayList<>();
         DatabaseReference readRef1 = FirebaseDatabase.getInstance().getReference().child("EventDetails");
@@ -129,7 +128,7 @@ class Mycustomer1Adapter extends ArrayAdapter<String> {
         TextView custvcategory = evrow.findViewById(R.id.custvcategory);
         TextView custvvenue = evrow.findViewById(R.id.custvvenue);
         TextView custvtime = evrow.findViewById(R.id.custvtime);
-        //ImageView stdPhoto = stdrow.findViewById(R.id.stdPhoto);
+
 
         custvevID.setText(eventID.get(position).toString());
         custvevName.setText(eventName.get(position).toString());
@@ -151,12 +150,7 @@ class Mycustomer1Adapter extends ArrayAdapter<String> {
 
     }
 }
-//Photo add to imageview here
-       /* Glide.with(context)
-                .load(photo_link.get(position).toString())
-                .into(stdPhoto);
-        return stdrow;
-    }*/
+
 
 
 

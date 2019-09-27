@@ -61,6 +61,7 @@ public class customer_form01 extends AppCompatActivity {
 
 
 
+//insert
 
         proceed = (Button) findViewById(R.id.proceed);
 
@@ -70,8 +71,6 @@ public class customer_form01 extends AppCompatActivity {
 
             //@Override
             public void onClick(View view) {
-                //AddEvent2 addEvent2 = new AddEvent2();
-                // AddEvent2 addEvent2 = new AddEvent2();
 
                 DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("CustomerEvent");
                 try {
@@ -100,21 +99,6 @@ public class customer_form01 extends AppCompatActivity {
                         form01.setQty(qty.getText().toString().trim());
                         form01.setContactNo(cno.getText().toString().trim());
                         form01.setCus1email(custemail.getText().toString().trim());
-                    /*addEvent2.setCheckout(txtcheckout.getText().toString().trim());
-                    addEvent2.setFullName(txtname.getText().toString().trim());
-                    addEvent2.setAddress(txtaddress.getText().toString().trim());
-
-                    try{
-                        addEvent2.setContactnumber(Integer.parseInt(txtcontact.getText().toString().trim()));
-                    }catch (NumberFormatException ex1){
-                        Toast.makeText(getApplicationContext(), "Invalid Contact Number", Toast.LENGTH_LONG).show();
-                    }
-
-                    try{
-                        makereservation.setRooms(Integer.parseInt(txtrooms.getText().toString().trim()));
-                    }catch(NumberFormatException e2){
-                        Toast.makeText(getApplicationContext(), "Invalid Room Type", Toast.LENGTH_LONG).show();
-                    }*/
 
 
                         dbRef.child(form01.getCustomerID()).setValue(form01);
@@ -122,11 +106,9 @@ public class customer_form01 extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Data Saved Successfully", Toast.LENGTH_LONG).show();
                         clearControls();
 
-                        //Intent i = new Intent(getApplicationContext(), makereservation4.class);
-                        //startActivity(i);
                     }
 
-                    //});
+
 
                 } catch (Exception e1) {
                     Toast.makeText(getApplicationContext(), "Error" + e1, Toast.LENGTH_LONG).show();
@@ -141,9 +123,7 @@ public class customer_form01 extends AppCompatActivity {
                 qty.setText("");
                 cno.setText("");
                 custemail.setText("");
-                    /*txtcontact.setText("");
-                    txtnic.setText("");
-                    txtrooms.setText("");*/
+
             }
         });
     }

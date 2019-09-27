@@ -139,8 +139,6 @@ class Mycustomer2Adapter extends ArrayAdapter<String> {
         TextView strr98 = evrow.findViewById(R.id.strr9);
 
 
-        //ImageView stdPhoto = stdrow.findViewById(R.id.stdPhoto);
-
         custvevID.setText(CustomerID.get(position).toString());
         custvevName.setText(event.get(position).toString());
         custvcategory.setText(pkg.get(position).toString());
@@ -149,16 +147,6 @@ class Mycustomer2Adapter extends ArrayAdapter<String> {
         strr98.setText(strr9.get(position).toString());
 
 
-
-        /*evrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), customer_form01.class);
-                intent.putExtra("eventID", eventID.get(position).toString());
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                view.getContext().startActivity(intent);
-            }
-        });*/
 
         return evrow;
 

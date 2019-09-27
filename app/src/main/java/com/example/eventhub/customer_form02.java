@@ -67,7 +67,6 @@ public class customer_form02 extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                         if (dataSnapshot.hasChildren()) {
-                            //t1.setText(dataSnapshot.child("customerID").getValue().toString());
                             t2.setText(dataSnapshot.child("event").getValue().toString());
                             t3.setText(dataSnapshot.child("pkg").getValue().toString());
                             t4.setText(dataSnapshot.child("qty").getValue().toString());
@@ -115,12 +114,11 @@ public class customer_form02 extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), "Please enter your contact number", Toast.LENGTH_LONG).show();
                                 else if (isEmpty((t6.getText().toString())))
                                     Toast.makeText(getApplicationContext(), "Please enter your email", Toast.LENGTH_LONG).show();
-                                else if (inValidNumber(t6.getText().toString()))
+                                else if (inValidNumber(t5.getText().toString()))
                                     Toast.makeText(getApplicationContext(), "Please enter a valid Number", Toast.LENGTH_LONG).show();
                                 else if (!validateEmailAddress(t6.getText().toString()))
                                     Toast.makeText(getApplicationContext(), "Please enter a valid Email", Toast.LENGTH_LONG).show();
-                /*else if (isEmpty((txtcheckout.getText().toString())))
-                    Toast.makeText(getApplicationContext(), "Please enter your Check-Out date", Toast.LENGTH_LONG).show();*/
+
                                 else {
 
                                     form02.setCustomerID(t1.getText().toString());
