@@ -12,9 +12,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.regex.Pattern;
+
 import static android.text.TextUtils.isEmpty;
 
 public class cardpayment extends AppCompatActivity {
+
+    private boolean inValidNumber(String paynum) {
+        if (!Pattern.matches("[a-zA-Z]", paynum)) {
+            return paynum.length() != 16;
+        }
+        return false;
+    }
 
     Button paysub;
     EditText payname, paynum, paycvv, payexd;
@@ -48,6 +57,8 @@ public class cardpayment extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Please enter cvv", Toast.LENGTH_LONG).show();
                     else if (isEmpty((payexd.getText().toString())))
                         Toast.makeText(getApplicationContext(), "Please enter card's expiry date", Toast.LENGTH_LONG).show();
+                    else if (inValidNumber((paynum.getText().toString())))
+                        Toast.makeText(getApplicationContext(), "Please enter a valid number", Toast.LENGTH_LONG).show();
 
                     else {
                         x.setPayname(payname.getText().toString().trim());
